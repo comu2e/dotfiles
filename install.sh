@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eu
 
+
 # homebrew がインストールされていない場合インストール
 if [ ! -f /usr/local/bin/brew ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -18,9 +19,6 @@ fi
 
 # install software from BrewBundle.
 brew bundle -v --file=~/dotfiles/Brewfile
-if [ ! -f .DS_store ]; then
-    rm -rf .DS_store
-fi
 
 # if .config has not made ,error will occur.
 if [ ! -d ~/.config ]; then
