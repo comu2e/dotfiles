@@ -1,5 +1,5 @@
 # Concept
-dotfile's repo my own Mac PC.
+dotfile's repo my Mac PC.
 
 ## Envirnment
 Mac PC(Big Sur 11.4)
