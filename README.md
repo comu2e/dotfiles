@@ -7,6 +7,5 @@ Mac PC(Big Sur 11.4)
 ## Usage
 ```
 
-$ curl -o https://github.com/comu2e/dotfiles/master/install.sh
-
+$ curl -o - https://github.com/comu2e/dotfiles/blob/master/install.sh
 ```
