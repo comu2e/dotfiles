@@ -1,0 +1,5 @@
+pane	0	1	0	:-	1	:/Users/eiji/work/housebokan-infra	1	fish	:-fish
+pane	0	2	1	:*	1	:/Users/eiji/work/sumarch/housebokan-admin-rea	1	fish	:-fish
+window	0	1	:housebokan-infra	0	:-	b5fd,126x61,0,0,0	off
+window	0	2	:suzuki	1	:*	b5fe,126x61,0,0,1	off
+state	0	

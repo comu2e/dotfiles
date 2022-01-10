@@ -1,0 +1,5 @@
+pane	0	1	0	:-	1	:/Users/eiji	1	nvim	:-fish
+pane	0	2	1	:*	1	:/Users/eiji	1	fish	:-fish
+window	0	1	:nvim	0	:-	98dd,211x115,0,0,0	:
+window	0	2	:fish	1	:*	98de,211x115,0,0,1	:
+state	0	

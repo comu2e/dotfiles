@@ -1,0 +1,6 @@
+pane	1	1	1	:*	1	:/Users/eiji/private/resume	1	fish	:-fish
+pane	1	1	1	:*	2	:/Users/eiji	0	fish	:-fish
+pane	3	1	1	:*	1	:/Users/eiji	1	fish	:
+window	1	1	:fish	1	:*	437f,200x59,0,0{99x59,0,0,3,100x59,100,0,5}	:
+window	3	1	:tmux	1	:*	98e3,211x115,0,0,6	:
+state	3	

@@ -1,0 +1,8 @@
+.DS_Store
+.config/gh
+.cargo
+.npm/*
+.npm/
+.kite/*
+.kube/*
+.vscode/extensions/*

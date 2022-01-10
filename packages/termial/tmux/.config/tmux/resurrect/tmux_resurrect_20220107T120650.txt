@@ -1,0 +1,13 @@
+pane	0	1	0	:-	1	:/Users/eiji/work/next-spa	1	fish	:-fish
+pane	0	2	1	:*	1	:/Users/eiji/work/housebokan-infra	1	fish	:-fish
+pane	0	3	0	:	1	:/Users/eiji/work/sumarch/bokan/api/.github/workflows	0	nvim	:-fish
+pane	0	3	0	:	2	:/Users/eiji/work/sumarch/bokan/api	1	fish	:-fish
+pane	0	4	0	:	1	:/Users/eiji/work/sumarch/housebokan-admin-hm	1	fish	:-fish
+pane	0	4	0	:	2	:/Users/eiji/work/sumarch/housebokan-admin-hm	0	fish	:-fish
+pane	0	5	0	:##	1	:/Users/eiji/VisualStudio/TerraformProject/DemoTerraform	1	fish	:-fish
+window	0	1	:next-spa	0	:-	d6fd,181x98,0,0,0	off
+window	0	2	:housebokan-infra	1	:*	d6ff,181x98,0,0,2	off
+window	0	3	:housebokan	0	:	a8be,181x98,0,0[181x48,0,0,3,181x49,0,49,4]	off
+window	0	4	:housebokan-admin-hm	0	:	7be1,106x87,0,0[106x43,0,0,5,106x43,0,44,6]	off
+window	0	5	:DemoTerraform	0	:##	d704,181x98,0,0,7	off
+state	0	

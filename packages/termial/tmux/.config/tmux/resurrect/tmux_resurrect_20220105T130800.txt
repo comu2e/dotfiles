@@ -1,0 +1,5 @@
+pane	0	1	1	:*	1	:/Users/eiji	1	fish	:
+pane	1	1	1	:*	1	:/Users/eiji	1	fish	:
+window	0	1	:fish	1	:*	cd3d,176x95,0,0,0	:
+window	1	1	:fish	1	:*	cd3e,176x95,0,0,1	:
+state	1	

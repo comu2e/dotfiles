@@ -1,0 +1,113 @@
+window:
+  # デカめがいいので
+  dimensions:
+    columns: 200
+    lines: 60
+
+  # macは角丸ウインドウなので余白をとったほうが良い
+  padding:
+    x: 8
+    y: 4
+  opacity: 0.85
+live_config_reload: true
+
+scrolling:
+  # consoleのlogを10000行まで保持
+  history: 10000
+
+  # スクロール量は3行
+  multiplier: 3
+
+# Font
+font:
+  size: 18
+  normal:
+    family: 'Hack Nerd Font Mono'
+    style: Regular
+  bold:
+    family: 'Hack Nerd Font Mono'
+    style: Bold
+  italic:
+    family: 'Hack Nerd Font Mono'
+    style: Italic
+  bold_italic:
+    family: 'Hack Nerd Font Mono'
+    style: Bold Itali
+  offset:
+    y: 1
+
+  use_thin_strokes: true
+
+# キーバインド
+key_bindings:
+  # wikiのrecommnedをそのままコピーしただけ
+  - {
+      key: Comma,
+      mods: Command,
+      command:
+        {
+          program: "sh",
+          args: [ "-c", "open ~/.config/alacritty/alacritty.yml" ]
+        }
+    }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: Space, mods: Alt, chars: " " }
+  - { key: Back, mods: Super, chars: "\x15" }
+  # delete word/line
+  - { key: Left, mods: Alt, chars: "\eb" }
+  # one word left
+  - { key: Right, mods: Alt, chars: "\ef" }
+  # one word right
+  - {
+      key: Left,
+      mods: Command,
+      chars: "\eOH",
+      mode: AppCursor
+    }
+  # Home
+  - {
+      key: Right,
+      mods: Command,
+      chars: "\eOF",
+      mode: AppCursor
+    }
+  # End
+  # tmuxのprefixをCtrl-Qにしているので、その設定
+  # これがないとtmuxのprefixが効かずに、Alacrittyのキーバインドに持っていかれるっぽい？
+  - { key: Q, mods: Control, chars: "\x11" }
+  # tmux prefix
+colors:
+  # Default colors
+  primary:
+    background: '#2E3440'
+    foreground: '#D8DEE9'
+
+  # Normal colors
+  normal:
+    black: '#3B4252'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#88C0D0'
+    white: '#E5E9F0'
+
+  # Bright colors
+  bright:
+    black: '#4C566A'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#8FBCBB'
+    white: '#ECEFF4'
+theme: Nord
+
+# tmuxを自動起動する設定s
+# shell:
+  #program: /usr/local/bin/fish
+    #args:
+    #- -c
+      #    - "/usr/local/bin/tmux a -t 0 || /usr/local/bin/tmux"

@@ -1,0 +1,7 @@
+pane	0	1	0	:	1	:/Users/eiji/work/next-spa	1	fish	:-fish
+pane	0	2	0	:-	1	:/Users/eiji/work/next-spa	1	fish	:-fish
+pane	0	3	1	:*	1	:/Users/eiji/work/housebokan-infra	1	fish	:-fish
+window	0	1	:fish	0	:	878d,190x101,0,0,0	:
+window	0	2	:fish	0	:-	878e,190x101,0,0,1	:
+window	0	3	:fish	1	:*	878f,190x101,0,0,2	:
+state	0	

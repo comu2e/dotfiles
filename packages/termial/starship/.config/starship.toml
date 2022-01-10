@@ -1,0 +1,22 @@
+# ~/.config/starship.toml
+add_newline = true
+
+[character]
+vicmd_symbol = "[V](bold green) "
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+
+[aws]
+style = "bold blue"
+symbol = "? "
+
+[aws.region_aliases]
+ap-northeast-1 = "jp"
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = " "
+style = "bold dimmed blue"

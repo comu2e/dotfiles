@@ -1,0 +1,12 @@
+pane	1	1	1	:*	1	:/Users/eiji/private/resume	1	fish	:-fish
+pane	1	1	1	:*	2	:/Users/eiji	0	fish	:-fish
+pane	3	1	0	:##	1	:/Users/eiji/work/next-spa	0	fish	:-fish
+pane	3	1	0	:##	2	:/Users/eiji/work/next-spa	1	lazydocker	:-fish
+pane	3	2	0	:-	1	:/Users/eiji/work/housebokan-infra	1	fish	:-fish
+pane	3	2	0	:-	2	:/Users/eiji/work/housebokan-infra/src/dev	0	bat	:-fish
+pane	3	3	1	:*	1	:/Users/eiji/work/next-spa	1	fish	:-fish
+window	1	1	:fish	1	:*	437f,200x59,0,0{99x59,0,0,3,100x59,100,0,5}	:
+window	3	1	:lazydocker	0	:##	dd5a,181x98,0,0{90x98,0,0,7,90x98,91,0,12}	:
+window	3	2	:fish	0	:-	61ee,181x98,0,0{89x98,0,0,9,91x98,90,0,11}	:
+window	3	3	:fish	1	:*	6bb2,181x98,0,0,13	:
+state	3	
