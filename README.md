@@ -1,8 +1,8 @@
 # Concept
-dotfile's repo my Mac PC.
+Setup fast dev environment.
 
-## Envirnment
-Mac PC(Big Sur 11.4)
+## Environment
+Mac PC (Big Sur 11.4)
 
 ## Usage
 ```

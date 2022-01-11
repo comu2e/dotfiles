@@ -6,7 +6,7 @@ $git_branch $git_status
 [cmd_duration]
 disabled = true
 [character]
-success_symbol = "[](bold green)" # normal prompt
+success_symbol = "[✔](bold green)" # normal prompt
 error_symbol = "[✗](bold red)" # used if previous command failed
 
 [directory]
@@ -17,18 +17,19 @@ truncation_length = 2 # parent directories to show; default is 3
 truncation_symbol = "~/"
 
 [git_branch]
-format = "[$branch]($style)"
+format = "[](bold green) [$branch]($style)"
 style = "dimmed bold green"
+success_symbol = "[](bold green)" # normal prompt
 
 [git_status]
 format = "[$all_status$ahead_behind]($style)"
-ahead = "⇡ $count "
-behind = "⇣ $count "
-deleted = "🗑 $count "
-diverged = " $count "
-stashed = "📦 $count "
-modified = "פֿ $count "
+ahead = "⇡:$count "
+behind = "⇣:$count "
+deleted = "🗑:$count "
+diverged = ":$count "
+stashed = "📦:$count "
+modified = "פֿ:$count modified "
 staged = '[ $count ](dimmed bold green)'
-renamed = " $count "
+renamed = " :$count "
 untracked = ""
 style = "dimmed bold red"
