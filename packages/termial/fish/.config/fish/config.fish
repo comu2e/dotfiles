@@ -59,7 +59,10 @@ alias gstp="git stash pop"
 alias gstd="git stash drop"
 
 #exa
+alias ls="exa"
 alias la="exa -l -g --icons"
+alias ll='exa -ahl --git'
+
 #Atcoder
 abbr -a acn acc new abc
 abbr -a acu acc url
@@ -155,4 +158,9 @@ set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
 end
+
+
+source /usr/local/opt/asdf/asdf.fish
+
+starship init fish | source
 

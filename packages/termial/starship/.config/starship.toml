@@ -1,22 +1,35 @@
-# ~/.config/starship.toml
-add_newline = true
-
+add_newline = false
+format = """
+[■](bold cyan) $directory $character\
+$git_branch $git_status
+"""
+[cmd_duration]
+disabled = true
 [character]
-vicmd_symbol = "[V](bold green) "
+success_symbol = "[▶](bold green)" # normal prompt
+error_symbol = "[✗](bold red)" # used if previous command failed
 
 [directory]
-truncation_length = 100
+format = "[$path]($style)"
+style = "fg:purple"
 truncate_to_repo = false
+truncation_length = 2 # parent directories to show; default is 3
+truncation_symbol = "~/"
 
-[aws]
-style = "bold blue"
-symbol = "? "
+[git_branch]
+format = "[$branch]($style)"
+style = "dimmed green"
 
-[aws.region_aliases]
-ap-northeast-1 = "jp"
-
-[memory_usage]
-disabled = false
-threshold = -1
-symbol = " "
-style = "bold dimmed blue"
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+ahead = "⇡ $count "
+behind = "⇣ $count "
+deleted = "🗑 $count "
+diverged = " $count "
+stashed = "📦 $count "
+odified = "פֿ $count "
+staged = '[ $count ](green)'
+renamed = " $count "
+untracked = ""
+modified = ""
+style = "bold red"
