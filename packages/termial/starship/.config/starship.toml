@@ -1,7 +1,7 @@
 add_newline = false
 format = """
 $directory $git_branch $git_status
-[$time](bold red) [$username](bold green) [$character](bold cyan)
+[$time](bold red)[$username](bold green) [$character](bold cyan)
 """
 [username]
 style_user = "purple bold"
@@ -35,7 +35,7 @@ truncation_symbol = "~/"
 [git_branch]
 format = "[](bold green) [$branch]($style)"
 style = "dimmed bold green"
-success_symbol = "[](bold green)" # normal prompt
+symbol = "[](bold green)" # normal prompt
 
 [git_status]
 format = "[$all_status$ahead_behind]($style)"
