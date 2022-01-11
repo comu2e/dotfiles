@@ -1,12 +1,28 @@
 add_newline = false
 format = """
-[■](bold cyan) $directory $character\
-$git_branch $git_status
+$directory $git_branch $git_status
+[$time](bold red) [$username](bold green) [$character](bold cyan)
 """
+[username]
+style_user = "purple bold"
+style_root = "black bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[time]
+disabled = false
+format = '[$time](dimmed white) '
+time_format = "%H:%M"
+utc_time_offset = "+9"
+time_range = "0:00-24:00"
+
 [cmd_duration]
 disabled = true
+show_always = true
+
 [character]
-success_symbol = "[✔](bold green)" # normal prompt
+success_symbol = "[➜](bold green)" # normal prompt
 error_symbol = "[✗](bold red)" # used if previous command failed
 
 [directory]
