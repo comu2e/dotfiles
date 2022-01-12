@@ -1,8 +1,6 @@
-add_newline = false
-format = """
-$directory $git_branch $git_status
-[$time](bold red)[$username](bold green) [$character](bold cyan)
-"""
+add_newline = true 
+format = """$directory $git_branch $git_status
+[$time](bold red)[👤 $username](bold green)$aws [$character](bold cyan)"""
 [username]
 style_user = "purple bold"
 style_root = "black bold"
@@ -22,8 +20,8 @@ disabled = true
 show_always = true
 
 [character]
-success_symbol = "[➜](bold green)" # normal prompt
-error_symbol = "[✗](bold red)" # used if previous command failed
+success_symbol = "[🐱](bold green)" # normal prompt
+error_symbol = "[💢](bold red)" # used if previous command failed
 
 [directory]
 format = "[$path]($style)"
@@ -49,3 +47,10 @@ staged = '[ $count ](dimmed bold green)'
 renamed = " :$count "
 untracked = ""
 style = "dimmed bold red"
+
+[aws]
+format = ' on [$symbol($profile)]($style)'
+style = "bold blue"
+symbol = "🅰 "
+[aws.region_aliases]
+ap-northeast-1 = "jp"

@@ -58,6 +58,7 @@ alias gstl="git stash list"
 alias gstp="git stash pop"
 alias gstd="git stash drop"
 
+
 #exa
 alias ls="exa"
 alias la="exa -l -g --icons"

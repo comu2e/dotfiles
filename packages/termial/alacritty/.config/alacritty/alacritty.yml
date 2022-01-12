@@ -106,9 +106,3 @@ colors:
     white: '#ECEFF4'
 theme: Nord
 
-# tmuxを自動起動する設定s
-# shell:
-  #program: /usr/local/bin/fish
-    #args:
-    #- -c
-      #    - "/usr/local/bin/tmux a -t 0 || /usr/local/bin/tmux"
