@@ -1,6 +1,8 @@
 add_newline = true 
-format = """$directory $git_branch $git_status
-[$time](bold red)[👤 $username](bold green)$aws [$character](bold cyan)"""
+format = """
+[👤 $username](bold green)$aws [$time](bold red)
+$directory $git_branch $git_status[$character](bold cyan)
+"""
 [username]
 style_user = "purple bold"
 style_root = "black bold"
@@ -20,7 +22,7 @@ disabled = true
 show_always = true
 
 [character]
-success_symbol = "[🐱](bold green)" # normal prompt
+success_symbol = "[🐱💞](bold green)" # normal prompt
 error_symbol = "[🐱💢](bold red)" # used if previous command failed
 
 [directory]
