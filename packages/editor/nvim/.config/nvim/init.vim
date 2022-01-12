@@ -1,5 +1,5 @@
-runtime! userautoload/init/*.vim
-runtime! userautoload/plugins/*.vim
+" Fundamentals "{{{
+" ---------------------------------------------------------------------
 
 " init autocmd
 autocmd!
@@ -35,8 +35,6 @@ endif
 " Suppress appending <PasteStart> and <PasteEnd> when pasting
 set t_BE=
 
-let mapleader = "\<SPACE>"
-
 set nosc noru nosm
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -45,7 +43,7 @@ set lazyredraw
 "set mat=2
 " Ignore case when searching
 set ignorecase
-" Be smart when using tabs
+" Be smart when using tabs ;)
 set smarttab
 " indents
 filetype plugin indent on
@@ -65,10 +63,8 @@ autocmd InsertLeave * set nopaste
 " Add asterisks in block comments
 set formatoptions+=r
 
-" auto save
-let g:auto_save_in_insert_mode = 0
+"}}}
 
-let g:auto_save_silent = 1
 " Highlights "{{{
 " ---------------------------------------------------------------------
 set cursorline
@@ -128,7 +124,6 @@ endif
 runtime ./maps.vim
 "}}}
 
-
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
 
@@ -154,14 +149,3 @@ set exrc
 "}}}
 
 " vim: set foldmethod=marker foldlevel=0:
-
-" Solarize color
-set termguicolors
-
-" Markdown設定
-" skanehira/preview-markdown.vim用の設定値
-let g:preview_markdown_vertical = 1
-let g:preview_markdown_auto_update = 1
-
-
-
