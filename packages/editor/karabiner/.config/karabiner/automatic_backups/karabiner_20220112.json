@@ -1,3 +1,4 @@
+
 {
     "global": {
         "check_for_updates_on_startup": true,
@@ -423,6 +424,16 @@
                     "simple_modifications": [
                         {
                             "from": {
+                                "apple_vendor_top_case_key_code": "keyboard_fn"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "escape"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
                                 "key_code": "right_control"
                             },
                             "to": [
@@ -577,21 +588,21 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "home"
-                        }
-                    ]
-                },
-                {
-                    "from": {
                         "key_code": "home"
                     },
                     "to": [
                         {
                             "key_code": "japanese_eisuu"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "key_code": "home"
                         }
                     ]
                 }
