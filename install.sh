@@ -29,7 +29,7 @@ fi
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
 stow -v -d ~/dotfiles/packages/virual_environment/ -t ~ docker
 stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
-stow -v -d ~/dotfiles/packages/editor -t ~ coc karabiner nvim vscode
+stow -v -d ~/dotfiles/packages/editor -t ~ coc karabiner nvim
 
 git config --global ~/.config/git/.gitconfig
 
