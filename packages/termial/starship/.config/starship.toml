@@ -1,7 +1,9 @@
-add_newline = true 
+add_newline = false
 format = """
-[👤 $username](bold green)$aws [$time](bold red)
-$directory $git_branch $git_status[$character](bold cyan)
+[┌─────────────────](bold green)
+[│](bold green)[👤 $username](bold green)$aws [$time](bold red)
+[│](bold green)$directory $git_branch $git_status
+[└────────────────>](bold green) [$character](bold green)
 """
 [username]
 style_user = "purple bold"
@@ -22,11 +24,11 @@ disabled = true
 show_always = true
 
 [character]
-success_symbol = "[🐱💞](bold green)" # normal prompt
+success_symbol = "[🐶](bold green)" # normal prompt
 error_symbol = "[🐱💢](bold red)" # used if previous command failed
 
 [directory]
-format = "[$path]($style)"
+format = "📁 [$path]($style)"
 style = "fg:cyan"
 truncate_to_repo = false
 truncation_length = 2 # parent directories to show; default is 3
