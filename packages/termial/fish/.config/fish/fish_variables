@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export AWS_CLI_ACCOUNT_ID:\x3d\x1e\x7b\x7d
-SETUVAR --export AWS_PROFILE:eiji\x2dsuzuki
+SETUVAR --export AWS_PROFILE:housebokan\x2ddev
 SETUVAR --export PYENV_ROOT:/Users/takahashi\x2eeiji/\x2epyenv
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2E_2E_:cd\x20\x2e\x2e/\x2e\x2e

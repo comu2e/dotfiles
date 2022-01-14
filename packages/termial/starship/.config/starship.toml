@@ -1,7 +1,7 @@
 add_newline = false
 format = """
-[┌─────────────────](bold green)
-[│](bold green)[👤 $username](bold green)$aws [$time](bold red)
+[┌─────────────────](bold purple)
+[│](bold purple)[👤 $username](bold green)$aws [$time](bold red)
 [│](bold green)$directory $git_branch $git_status
 [└────────────────>](bold green) [$character](bold green)
 """
@@ -24,7 +24,7 @@ disabled = true
 show_always = true
 
 [character]
-success_symbol = "[🐶](bold green)" # normal prompt
+success_symbol = "[🐶<](bold green)" # normal prompt
 error_symbol = "[🐱💢](bold red)" # used if previous command failed
 
 [directory]
