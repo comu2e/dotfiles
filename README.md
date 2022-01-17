@@ -26,6 +26,6 @@ alias has set with below.
 fish -> $ fcon #fish configuration
 Alacritty -> $ alcon #Alacritty configuration
 nvim -> $ vcon # vim configuration
-vim plugin configure -> $ vpon # vim plugin configuration
+vim plugin configure -> $ vpcon # vim plugin configuration
 
 ```
