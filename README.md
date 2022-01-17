@@ -18,7 +18,7 @@ $ brew start service start yabai
 window management is configured detail of keybindings with skhrdrc(packages/keybindings/skhd/skhrdrc).
 
 
-## fish/Alacritty/nvim  configured
+## fish/Alacritty/nvim  configuration
 
 alias has set with below.
 
