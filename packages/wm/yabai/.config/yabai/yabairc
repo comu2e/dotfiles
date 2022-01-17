@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
 # Layout config
-yabai -m config window_gap                   8
+yabai -m config window_gap                   6
 yabai -m config window_placement             second_child
 yabai -m config layout                       bsp
-yabai -m config bottom_padding               100
+yabai -m config bottom_padding               120
 
 # set float layout for MBP display
 for index in "$space_indices_on_mbp_display"
