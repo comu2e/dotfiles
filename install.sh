@@ -29,9 +29,9 @@ fi
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
 stow -v -d ~/dotfiles/packages/virual_environment/ -t ~ docker
 stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
-stow -v -d ~/dotfiles/packages/editor -t ~ coc karabiner nvim
+stow -v -d ~/dotfiles/packages/editor -t ~ coc nvim
 stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
-stow -v -d ~/dotfiles/packages/keybindings -t ~ skhd
+stow -v -d ~/dotfiles/packages/keybindings -t ~ skhd karabiner
 
 cat << END
 

@@ -5,6 +5,7 @@ format = """
 [│](bold green)$directory $git_branch $git_status
 [└────────────────>](bold green) [$character](bold green)
 """
+
 [username]
 style_user = "purple bold"
 style_root = "black bold"
@@ -24,7 +25,7 @@ disabled = true
 show_always = true
 
 [character]
-success_symbol = "[🐶<](bold green)" # normal prompt
+success_symbol = "[🐶never give up<](bold green)" # normal prompt
 error_symbol = "[🐱💢💢💢](bold red)" # used if previous command failed
 
 [directory]

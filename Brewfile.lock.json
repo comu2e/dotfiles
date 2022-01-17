@@ -20,16 +20,16 @@
         "revision": "d40b20f64e29453a77290f7c329cf336a59e8b66"
       },
       "homebrew/cask": {
-        "revision": "5f37c616410d25b078abb469b6f783d745d33869"
+        "revision": "45f3dadfa87ed29489b4767bac063ddc7a7c38ff"
       },
       "homebrew/cask-fonts": {
         "revision": "5af8b108b1eaa635bc830268510b403593b8719a"
       },
       "homebrew/core": {
-        "revision": "c3bed521f468d530786bfa557b6eafdf10b0d97c"
+        "revision": "56c87266947b9eba283415f587dc4b326d1f0406"
       },
       "homebrew/services": {
-        "revision": "3fdf64fb3391a8c58a68f7ca1bff8f5118366954"
+        "revision": "7bc7c76b24e89b9fe83b252aefcb398ffc6fd354"
       },
       "koekeishiya/formulae": {
         "revision": "2840281ee15bebd679f4af0a8750bfabeba6e25f"
@@ -2625,7 +2625,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c3bed521f468d530786bfa557b6eafdf10b0d97c",
+        "Homebrew/homebrew-core": "56c87266947b9eba283415f587dc4b326d1f0406",
         "CLT": "12.5.0.22.11",
         "Xcode": "13.2.1",
         "macOS": "11.4"

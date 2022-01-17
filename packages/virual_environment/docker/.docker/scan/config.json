@@ -1,4 +1,4 @@
 {
-  "optin" : true,
-  "path" : "/Applications/Docker.app/Contents/Resources/snyk/docker/snyk-mac.sh"
+  "path" : "/Applications/Docker.app/Contents/Resources/snyk/docker/snyk-mac.sh",
+  "optin" : true
 }
