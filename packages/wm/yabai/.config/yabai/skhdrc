@@ -3,6 +3,7 @@
 ###########################################################
 
 alt - f : yabai -m space --layout float
+alt - b : yabai -m space --layout bsp
 # Toggle between bsp and stack
 alt + shift - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
     && yabai -m space --layout stack \
@@ -82,4 +83,4 @@ shift + alt - e : yabai -m space --balance
 ###########################################################
 # Stackline
 ###########################################################
-# shift + alt - b : hs -c 'stackline.config:toggle("appearance.showIcons")'
+shift + alt - b : hs -c 'stackline.config:toggle("appearance.showIcons")'
