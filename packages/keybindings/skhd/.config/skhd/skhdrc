@@ -79,8 +79,8 @@ shift + alt - m : yabai -m space --toggle mission-control
 
 # reset split balance
 shift + alt - e : yabai -m space --balance
-
+ 
 ###########################################################
 # Stackline
 ###########################################################
-# shift + alt - b : hs -c 'stackline.config:toggle("appearance.showIcons")'
+shift + alt - b : hs -c 'stackline.config:toggle("appearance.showIcons")'

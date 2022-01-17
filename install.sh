@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eu
 
-
 # homebrew がインストールされていない場合インストール
 if [ ! -f /usr/local/bin/brew ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
