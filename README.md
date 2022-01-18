@@ -15,7 +15,7 @@ $ brew start service start skhd
 $ brew start service start yabai
 ```
 
-window management is configured detail of keybindings with skhrdrc(packages/keybindings/skhd/skhrdrc).
+window management is configured detail of keybindings with skhdrc(packages/keybindings/skhd/skhrdrc).
 
 
 ## fish/Alacritty/nvim  configuration
@@ -29,3 +29,12 @@ nvim -> $ vcon # vim configuration
 vim plugin configure -> $ vpcon # vim plugin configuration
 
 ```
+
+### Keybindings configuration
+Edit skhdrc
+
+If not working keybindings,execute below command,and debug.
+```
+$ skhd -V
+```
+
