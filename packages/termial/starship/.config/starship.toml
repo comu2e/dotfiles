@@ -25,7 +25,7 @@ disabled = true
 show_always = true
 
 [character]
-success_symbol = "[🐶never give up<](bold green)" # normal prompt
+success_symbol = "[🐶<Do it!!](bold green)" # normal prompt
 error_symbol = "[🐱💢💢💢](bold red)" # used if previous command failed
 
 [directory]
