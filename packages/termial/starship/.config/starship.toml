@@ -1,13 +1,13 @@
 add_newline = false
 format = """
 [┌─────────────────](bold purple)
-[│](bold purple)[👤 $username](bold green)$aws [$time](bold red)
+[│](bold purple)[👤 $username](dimmed green)$aws [$time](dimmed red)
 [│](bold green)$directory $git_branch $git_status
 [└────────────────>](bold green) [$character](bold green)
 """
 
 [username]
-style_user = "purple bold"
+style_user = "purple dimmed"
 style_root = "black bold"
 format = "[$user]($style)"
 disabled = false
@@ -36,7 +36,7 @@ truncation_length = 2 # parent directories to show; default is 3
 truncation_symbol = "~/"
 
 [git_branch]
-format = "[](bold green) [$branch]($style)"
+format = "[](bold green) [\\[$branch\\]]($style)"
 style = "dimmed bold green"
 symbol = "[](bold green)" # normal prompt
 
