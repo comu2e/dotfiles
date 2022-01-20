@@ -1,6 +1,6 @@
 add_newline = false
 format = """
-[┌─────────────────](bold purple)
+[┌─────────────────](purple dimmed)
 [│](bold purple)[👤 $username](dimmed green)$aws [$time](dimmed red)
 [│](bold green)$directory $git_branch $git_status
 [└────────────────>](bold green) [$character](bold green)
@@ -36,7 +36,7 @@ truncation_length = 2 # parent directories to show; default is 3
 truncation_symbol = "~/"
 
 [git_branch]
-format = "[](bold green) [\\[$branch\\]]($style)"
+format = "[](bold green) [ $branch]($style)"
 style = "dimmed bold green"
 symbol = "[](bold green)" # normal prompt
 
@@ -55,7 +55,7 @@ style = "dimmed bold red"
 
 [aws]
 format = ' [on](dimmed white) [$symbol($profile)]($style)'
-style = "bold blue"
-symbol = "☁ "
+style = "bg:dimmed blue fg:dimmed bright-green"
+symbol = " "
 [aws.region_aliases]
 ap-northeast-1 = "jp"

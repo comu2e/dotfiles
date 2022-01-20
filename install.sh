@@ -31,8 +31,8 @@ stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
 stow -v -d ~/dotfiles/packages/editor -t ~ coc nvim
 stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
 stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
-ln -sf "~/.config/yabai/yabairc" "~/.yabairc"
-ln -sf "~/.config/yabai/skhdrc" "~/.skhdrc"
+ln -si "~/.config/yabai/yabairc" "~/.yabairc"
+ln -si "~/.config/yabai/skhdrc" "~/.skhdrc"
 cat << END
 
 **************************************************

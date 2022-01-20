@@ -101,6 +101,7 @@ alias zcon="vim ~/.config/zellij/config.yaml"
 alias fcon="vim ~/.config/fish/config.fish"
 alias tcon="vim ~/.tmux.conf"
 alias alcon="vim ~/.config/alacritty/alacritty.yml"
+alias m="make"
 alias tk="tmux kill-server"
 alias vpcon="vim ~/.config/nvim/plug.vim"
 #aws
