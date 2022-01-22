@@ -8,9 +8,10 @@ window:
   padding:
     x: 8
     y: 4
-  opacity: 0.6
+  opacity: 0.9
+  decorations: None
+
 live_config_reload: true
-decorations: None
 
 scrolling:
   # consoleのlogを10000行まで保持

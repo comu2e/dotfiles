@@ -1,7 +1,5 @@
 # ~/.config/fish/config.fish
 
-starship init fish | source
-
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 #hub
@@ -113,6 +111,8 @@ abbr -a awsssm aws ecs update-service \
 function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
 end
+#vi mode
+fish_vi_key_bindings
 
 #Go
 #Goenv
