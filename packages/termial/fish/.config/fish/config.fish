@@ -97,7 +97,7 @@ abbr -a ip curl ipinfo.io
 alias vcon="vim ~/.config/nvim/init.vim"
 alias zcon="vim ~/.config/zellij/config.yaml"
 alias fcon="vim ~/.config/fish/config.fish"
-alias tcon="vim ~/.tmux.conf"
+alias tcon="vim ~/.config/tmux/.tmux.conf"
 alias alcon="vim ~/.config/alacritty/alacritty.yml"
 alias m="make"
 alias tk="tmux kill-server"
