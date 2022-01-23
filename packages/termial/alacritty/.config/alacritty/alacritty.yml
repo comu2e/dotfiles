@@ -105,5 +105,11 @@ colors:
     magenta: '#B48EAD'
     cyan: '#8FBCBB'
     white: '#ECEFF4'
+cursor:
+  style:
+    shape: Beam
+  vi_mode_style:
+    shape: Block
+
 theme: Nord
 
