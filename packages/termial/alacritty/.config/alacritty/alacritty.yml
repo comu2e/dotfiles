@@ -22,7 +22,7 @@ scrolling:
 
 # Font
 font:
-  size: 18
+  size: 20
   normal:
     family: 'Hack Nerd Font Mono'
     style: Regular
@@ -79,37 +79,36 @@ key_bindings:
   - { key: Q, mods: Control, chars: "\x11" }
   # tmux prefix
 colors:
-  # Default colors
+  name: VisiBone
+  author: ""
   primary:
-    background: '#2E3440'
-    foreground: '#D8DEE9'
-
-  # Normal colors
+    background: "#000000"
+    foreground: "#ffffff"
+  cursor:
+    text: "#000000"
+    cursor: "#ffffff"
   normal:
-    black: '#3B4252'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#88C0D0'
-    white: '#E5E9F0'
-
-  # Bright colors
+    black: "#666666"
+    red: "#cc6666"
+    green: "#66cc99"
+    yellow: "#cc9966"
+    blue: "#6699cc"
+    magenta: "#cc6699"
+    cyan: "#66cccc"
+    white: "#cccccc"
   bright:
-    black: '#4C566A'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#8FBCBB'
-    white: '#ECEFF4'
+    black: "#999999"
+    red: "#ff9999"
+    green: "#99ffcc"
+    yellow: "#ffcc99"
+    blue: "#99ccff"
+    magenta: "#ff99cc"
+    cyan: "#99ffff"
+    white: "#ffffff"
 cursor:
   style:
     shape: Beam
   vi_mode_style:
     shape: Block
 
-theme: Nord
-
+theme: Visibone

@@ -26,6 +26,7 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
+  Plug 'ray-x/go.nvim'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

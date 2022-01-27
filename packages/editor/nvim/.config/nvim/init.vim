@@ -88,7 +88,7 @@ endif
 
 "}}}
 
-" File types "{{{
+"File types "{{{
 " ---------------------------------------------------------------------
 " JavaScript
 au BufNewFile,BufRead *.es6 setf javascript
@@ -108,7 +108,12 @@ autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
+" Go
+autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+
 "}}}
+
+
 
 " Imports "{{{
 " ---------------------------------------------------------------------

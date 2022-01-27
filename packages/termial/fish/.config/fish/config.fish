@@ -115,24 +115,11 @@ end
 fish_vi_key_bindings
 
 #Go
-#Goenv
-set -x GOENV_ROOT $HOME/.goenv
-set -x PATH $GOENV_ROOT/bin $PATH
-eval (goenv init - | source)
-set -x PATH $GOPATH/bin $PATH
 #psql
 set -x PATH /usr/local/opt/libpq/bin:$PATH
 #bzip2
 set -gx LDFLAGS "-L/usr/local/opt/bzip2/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/bzip2/include"
-source (pyenv init -|psub)
-
-#Go
-set -x GOPATH $HOME/go
-set -x PATH $PATH $GOPATH/go
-
-#Rust 
-set -x PATH  $PATH ~/.cargo/bin
 
 
 #fish message
