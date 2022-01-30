@@ -1,7 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export AWS_CLI_ACCOUNT_ID:\x3d\x1e\x7b\x7d
-SETUVAR --export AWS_PROFILE:takahashi_sumarch_dev
+SETUVAR --export AWS_PROFILE:housebokan\x2ddev_admin
+SETUVAR --export GO111MODULE:on
 SETUVAR --export PYENV_ROOT:/Users/takahashi\x2eeiji/\x2epyenv
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2E_2E_:cd\x20\x2e\x2e/\x2e\x2e
@@ -51,7 +52,7 @@ SETUVAR _fish_abbr_ojt:oj\x20t\x20\x2dc\x20\x22python3\x20main\x2epy\x22
 SETUVAR _fish_abbr_pa:php\x20artisan\x20make
 SETUVAR _fish_abbr_pd:git\x20pull\x20origin\x20develop
 SETUVAR _fish_abbr_phptest:vendor/bin/phpunit
-SETUVAR _fish_abbr_po:git\x20pull\x20origin
+SETUVAR _fish_abbr_po:pods
 SETUVAR _fish_abbr_st:git\x20status
 SETUVAR _fish_abbr_ta:terraform\x20apply
 SETUVAR _fish_abbr_tas:tmux\x20attach\x2dsession\x20\x2dt

@@ -32,9 +32,6 @@ if has('nvim')
   set inccommand=split
 endif
 
-" Suppress appending <PasteStart> and <PasteEnd> when pasting
-set t_BE=
-
 set nosc noru nosm
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -113,8 +110,6 @@ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
 
 "}}}
 
-
-
 " Imports "{{{
 " ---------------------------------------------------------------------
 runtime ./plug.vim
@@ -153,4 +148,20 @@ endif
 set exrc
 "}}}
 
-" vim: set foldmethod=marker foldlevel=0:
+" Fern set up
+" Ctrl+nでファイルツリーを表示/非表示する
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+" iconの表示
+let g:fern#renderer = 'nerdfont'
+" アイコンに色をつける
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
+" 自動補完
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c 
+
+

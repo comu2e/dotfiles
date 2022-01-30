@@ -73,7 +73,7 @@ abbr -a ld lazydocker
 abbr -a lg lazygit
 #kubernetes
 abbr -a k kubectl
-
+abbr -a po pods
 #tmux
 alias ide="~/.config/tmux/bin/ide.sh"
 alias tmux="tmux -f ~/.config/tmux/.tmux.conf"
@@ -121,9 +121,11 @@ set -x PATH /usr/local/opt/libpq/bin:$PATH
 set -gx LDFLAGS "-L/usr/local/opt/bzip2/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/bzip2/include"
 
+#krew
+set -gx PATH $PATH $HOME/.krew/bin
 
 #fish message
-set fish_greeting
+#set fish_greeting
 # Path to z 
 set -g Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
 abbr -a j z
