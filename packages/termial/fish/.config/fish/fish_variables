@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export AWS_CLI_ACCOUNT_ID:\x3d\x1e\x7b\x7d
-SETUVAR --export AWS_PROFILE:housebokan\x2ddev_admin
+SETUVAR --export AWS_PROFILE:takahashi_sumarch_dev
 SETUVAR --export GO111MODULE:on
 SETUVAR --export PYENV_ROOT:/Users/takahashi\x2eeiji/\x2epyenv
 SETUVAR __fish_initialized:3100

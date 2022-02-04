@@ -11,7 +11,7 @@ eval (hub alias -s)
 abbr -a ojt oj t -c \"python3 main.py\"
 abbr -a acs acc submit main.py -- --guess-python-interpreter pypy
 #git
-
+abbr -a g git
 #docker
 abbr -a d docker 
 abbr -a dc docker-compose 

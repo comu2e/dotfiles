@@ -3,7 +3,7 @@ format = """
 [┌─────────────────](purple dimmed)
 [│](bold purple)[👤 $username](dimmed green)$aws [$time](dimmed red)
 [│](bold green)$directory $git_branch $git_status
-[└────────────────>](bold green) [$character](bold green)
+[╰─────────────>](bold green) [$character](bold green)
 """
 
 [username]
