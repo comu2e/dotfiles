@@ -1,6 +1,28 @@
 #!/bin/bash
 set -eu
 
+log() {
+    message=$1
+    echo 📌 "$message"
+}
+
+is_file() {
+    path="$1"
+    [ -f "$path" ]
+}
+
+is_dir() {
+    path="$1"
+    [ -d "$path" ]
+}
+
+ensure_dir() {
+    path="$1"
+    if ! is_dir "$path"; then
+        mkdir -p "$path"
+    fi
+}
+
 # homebrew がインストールされていない場合インストール
 if [ ! -f /usr/local/bin/brew ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,9 +46,29 @@ if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
 
+# asdf
+for plugin in $(awk '{print $1}' ~/.tool-versions); do
+    if ! is_dir ~/.asdf/plugins/"$plugin"; then
+        asdf plugin add "$plugin"
+    fi
+done
+
+is_runtime_versions_changed () {
+    plugin="$1"
+    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
+    installed=$(asdf list "$plugin" 2>&1)
+
+    is_changed=
+    for version in $specified; do
+        match=$(echo "$installed" | grep "$version")
+        [ -z "$match" ] && is_changed=1
+    done
+
+    [ "$is_changed" ]
+}
+
 # symlink each config file.
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
-stow -v -d ~/dotfiles/packages/virual_environment/ -t ~ docker
 stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
 stow -v -d ~/dotfiles/packages/editor -t ~ coc nvim
 stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
