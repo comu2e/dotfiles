@@ -116,3 +116,4 @@ cask "virtualbox"
 cask "session-manager-plugin"
 cask "keeweb"
 mas "Xcode", id: 497799835
+mas "Display Menu", id: 549083868
