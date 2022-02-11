@@ -120,9 +120,4 @@ cask "vagrant"
 cask "virtualbox"
 cask "zoom"
 
-mas "Display Menu", id: 549083868
-mas "Kindle", id: 405399194
-mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
-mas "Notion Web Clipper", id: 1559269364
 mas "Xcode", id: 497799835
