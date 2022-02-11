@@ -54,6 +54,7 @@ for plugin in $(awk '{print $1}' ~/.tool-versions); do
 done
 
 
+log "asdf already finished"
 
 # symlink each config file.
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
@@ -62,8 +63,8 @@ stow -v -d ~/dotfiles/packages/editor -t ~ nvim
 # stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
 stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
 stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
-ln -sf "~/.config/yabai/yabairc" "~/.yabairc"
-ln -sf "~/.config/yabai/skhdrc" "~/.skhdrc"
+# ln -sf "~/.config/yabai/yabairc" "~/.yabairc"
+# ln -sf "~/.config/yabai/skhdrc" "~/.skhdrc"
 ln -sf "~/dotfile/runtime/runtime/.tool-versions" "~/.tool-versions"
 
 is_runtime_versions_changed () {
