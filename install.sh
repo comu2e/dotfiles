@@ -62,9 +62,9 @@ stow -v -d ~/dotfiles/packages/editor -t ~ nvim
 # stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
 stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
 stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
-ln -si "~/.config/yabai/yabairc" "~/.yabairc"
-ln -si "~/.config/yabai/skhdrc" "~/.skhdrc"
-ln -si "~/dotfile/runtime/runtime/.tool-versions" "~/.tool-versions"
+ln -sf "~/.config/yabai/yabairc" "~/.yabairc"
+ln -sf "~/.config/yabai/skhdrc" "~/.skhdrc"
+ln -sf "~/dotfile/runtime/runtime/.tool-versions" "~/.tool-versions"
 
 is_runtime_versions_changed () {
     plugin="$1"
