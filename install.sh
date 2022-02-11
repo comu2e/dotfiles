@@ -27,7 +27,7 @@ ensure_dir() {
 if [ ! -f /usr/local/bin/brew ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-  echo "Homebrew has installed."
+  log "Homebrew has installed."
 fi
 
 #dotfile ないときはgit clone 
@@ -35,7 +35,7 @@ if [ ! -d ~/dotfiles ]; then
   cd ~
   git clone git@github.com:comu2e/dotfiles.git
 else
-  echo "dotfile is already exist."
+  log "dotfile is already exist."
 fi 
 
 # install software from BrewBundle.
