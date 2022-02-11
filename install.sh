@@ -80,7 +80,9 @@ is_runtime_versions_changed () {
     [ "$is_changed" ]
 }
 
+if [ ! -d ~/.local/share/omf/ ];then
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+fi
 
 cat << END
 
