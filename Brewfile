@@ -114,4 +114,5 @@ cask "signal"
 cask "vagrant"
 cask "virtualbox"
 cask "session-manager-plugin"
+cask "keeweb"
 mas "Xcode", id: 497799835
