@@ -61,7 +61,7 @@ else
 fi 
 
 # install software from BrewBundle.
-if [ ! "skip-apps"];then
+if [ ! skip-apps ]; then
   log "Install APps and CLis"
   brew bundle -v --file=~/dotfiles/Brewfile
 fi 
