@@ -23,7 +23,7 @@
         "revision": "4e498a861c5701d15c28f3e44996ac6eed87e2e0"
       },
       "homebrew/cask": {
-        "revision": "f194b7d4970530482adbfa4f1bb3f5e92de87d8b"
+        "revision": "46045b6c86d62e6514773774cebcb72d7816bf37"
       },
       "homebrew/cask-fonts": {
         "revision": "827048804d7524181f0571c821187131cc9b6f81"
@@ -2834,6 +2834,10 @@
       "koekeishiya/formulae/skhd": {
         "version": "0.3.5",
         "bottle": false
+      },
+      "koekeishiya/formulae/yabai": {
+        "version": "3.3.10",
+        "bottle": false
       }
     },
     "cask": {
@@ -2850,7 +2854,7 @@
         }
       },
       "docker": {
-        "version": "4.4.2,73305",
+        "version": "4.5.0,74594",
         "options": {
           "full_name": "docker"
         }
@@ -3000,7 +3004,7 @@
         }
       },
       "signal": {
-        "version": "5.30.0",
+        "version": "5.31.0",
         "options": {
           "full_name": "signal"
         }
