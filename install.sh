@@ -60,11 +60,11 @@ log "asdf already finished"
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
 stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
 stow -v -d ~/dotfiles/packages/editor -t ~ nvim
-# stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
-# stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
+ stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
+stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
 stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
-# ln -sf "~/.config/yabai/yabairc" "~/.yabairc"
-# ln -sf "~/.config/yabai/skhdrc" "~/.skhdrc"
+ln -sf "~/.config/yabai/yabairc" "~/.yabairc"
+ln -sf "~/.config/yabai/skhdrc" "~/.skhdrc"
 
 is_runtime_versions_changed () {
     plugin="$1"
