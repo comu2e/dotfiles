@@ -112,7 +112,7 @@ function fish_user_key_bindings
 end
 #vi mode
 fish_vi_key_bindings
-
+alias yabai="brew services restart yabai"
 #Go
 #psql
 set -x PATH /usr/local/opt/libpq/bin:$PATH

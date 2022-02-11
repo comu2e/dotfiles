@@ -86,6 +86,7 @@ brew "filosottile/musl-cross/musl-cross"
 brew "hashicorp/tap/terraform"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai"
 
 cask "alacritty"
 cask "alfred"
