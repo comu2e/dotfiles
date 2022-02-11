@@ -22,7 +22,29 @@ ensure_dir() {
         mkdir -p "$path"
     fi
 }
+is_runtime_versions_changed () {
+    plugin="$1"
+    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
+    installed=$(asdf list "$plugin" 2>&1)
 
+    is_changed=
+    for version in $specified; do
+        match=$(echo "$installed" | grep "$version")
+        [ -z "$match" ] && is_changed=1
+    done
+
+    [ "$is_changed" ]
+}
+
+
+for i in "$@"; do
+    case "$i" in
+        -s|--skip-apps)
+            skip_apps=1
+            shift ;;
+        *) ;;
+    esac
+done
 # homebrew がインストールされていない場合インストール
 if [ ! -f /usr/local/bin/brew ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -39,8 +61,10 @@ else
 fi 
 
 # install software from BrewBundle.
-brew bundle -v --file=~/dotfiles/Brewfile
-
+if [ ! "skip-apps"];then
+  log "Install APps and CLis"
+  brew bundle -v --file=~/dotfiles/Brewfile
+fi 
 # if .config has not made ,error will occur.
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
@@ -52,9 +76,18 @@ for plugin in $(awk '{print $1}' ~/.tool-versions); do
         asdf plugin add "$plugin"
     fi
 done
+for plugin in $(asdf plugin list); do
+    if is_runtime_versions_changed "$plugin"; then
+        if [ "$plugin" = nodejs ]; then
+            log 'Import release team keyring for Node.JS'
+            # more info -> https://github.com/asdf-vm/asdf-nodejs#install
+            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+        fi
 
-
-log "asdf already finished"
+        log "Install runtime: $plugin"
+        asdf install "$plugin"
+    fi
+done
 
 # symlink each config file.
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
@@ -67,19 +100,26 @@ ln -sf ~/.config/yabai/yabairc ~/.yabairc
 ln -sf ~/.config/yabai/skhdrc ~/.skhdrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 
-is_runtime_versions_changed () {
-    plugin="$1"
-    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
-    installed=$(asdf list "$plugin" 2>&1)
+for plugin in $(asdf plugin list); do
+    if is_runtime_versions_changed "$plugin"; then
+        if [ "$plugin" = nodejs ]; then
+            log 'Import release team keyring for Node.JS'
+            # more info -> https://github.com/asdf-vm/asdf-nodejs#install
+            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+        fi
 
-    is_changed=
-    for version in $specified; do
-        match=$(echo "$installed" | grep "$version")
-        [ -z "$match" ] && is_changed=1
-    done
+        log "Install runtime: $plugin"
+        asdf install "$plugin"
+    fi
+done
 
-    [ "$is_changed" ]
-}
+log "asdf already finished"
+
+if ! is_dir ~/.config/yarn/global/node_modules; then
+    log 'Setup Yarn global'
+    yarn global add
+fi
+
 
 if [ ! -d ~/.local/share/omf/ ];then
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
