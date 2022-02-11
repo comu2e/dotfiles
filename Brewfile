@@ -119,5 +119,3 @@ cask "signal"
 cask "vagrant"
 cask "virtualbox"
 cask "zoom"
-
-mas "Xcode", id: 497799835
