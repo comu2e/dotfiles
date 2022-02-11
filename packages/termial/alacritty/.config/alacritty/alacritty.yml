@@ -1,8 +1,8 @@
 window:
   # デカめがいいので
   dimensions:
-    columns: 200
-    lines: 60
+    columns: 100
+    lines: 30
 
   # macは角丸ウインドウなので余白をとったほうが良い
   padding:
@@ -110,5 +110,9 @@ cursor:
     shape: Beam
   vi_mode_style:
     shape: Block
-
 theme: Visibone
+
+shell:
+   program: /usr/local/bin/fish
+   args:
+     - --login
