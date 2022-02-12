@@ -104,11 +104,7 @@ cask "slack"
 cask "pushplaylabs-sidekick"
 cask "karabiner-elements"
 cask "gpg-suite"
-cask "hammerspoon"
-cask "iina"
 cask "insomnia"
-cask "ledger-live"
-cask "minecraft"
 cask "obs"
 cask "obs-ndi"
 cask "react-native-debugger"
@@ -123,7 +119,6 @@ mas "Xcode", id: 497799835
 mas "Display Menu", id: 549083868
 mas "Authenticator", id: 1538761576
 mas "Kindle", id: 405399194
-mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Notion Web Clipper", id: 1559269364
 mas "Paste", id: 967805235
