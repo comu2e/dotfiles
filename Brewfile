@@ -82,6 +82,8 @@ brew "hashicorp/tap/terraform"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
+brew "coreutils"
+brew "gpg"
 
 cask "alacritty"
 cask "alfred"
@@ -115,6 +117,7 @@ cask "vagrant"
 cask "virtualbox"
 cask "session-manager-plugin"
 cask "keeweb"
+cask "visual-studio-code"
 
 mas "Xcode", id: 497799835
 mas "Display Menu", id: 549083868

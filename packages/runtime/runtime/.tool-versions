@@ -5,3 +5,4 @@ deno 1.5.2
 python 3.9.1 2.7.18
 ruby 3.0.1
 java adoptopenjdk-11.0.9+11
+nodejs 16.2.0

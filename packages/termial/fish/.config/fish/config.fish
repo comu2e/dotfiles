@@ -153,3 +153,4 @@ source /usr/local/opt/asdf/asdf.fish
 
 starship init fish | source
 
+source /usr/local/opt/asdf/asdf.fish

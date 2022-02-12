@@ -94,14 +94,9 @@ for plugin in $(awk '{print $1}' ~/.tool-versions); do
         asdf plugin add "$plugin"
     fi
 done
+
 for plugin in $(asdf plugin list); do
     if is_runtime_versions_changed "$plugin"; then
-        if [ "$plugin" = nodejs ]; then
-            log 'Import release team keyring for Node.JS'
-            # more info -> https://github.com/asdf-vm/asdf-nodejs#install
-            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-        fi
-
         log "Install runtime: $plugin"
         asdf install "$plugin"
     fi

@@ -33,6 +33,8 @@ if has("nvim")
   Plug 'lambdalisue/fern-renderer-nerdfont.vim'
   Plug 'lambdalisue/glyph-palette.vim'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'Shougo/dein.vim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 endif
 
