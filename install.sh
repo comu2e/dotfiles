@@ -36,15 +36,23 @@ is_runtime_versions_changed () {
     [ "$is_changed" ]
 }
 
-
+unlink_packages=
+verbose=
 for i in "$@"; do
     case "$i" in
-        -s|--skip-apps)
+       -s|--skip-apps)
             skip_apps=1
+            shift ;;
+        -v|--verbose)
+            verbose=1
+            shift ;;
+        -u=*|--unlink=*)
+            unlink_packages="${i#*=}"
             shift ;;
         *) ;;
     esac
 done
+
 # homebrew がインストールされていない場合インストール
 if [ ! -f /usr/local/bin/brew ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -61,14 +69,24 @@ else
 fi 
 
 # install software from BrewBundle.
-if [ ! skip-apps ]; then
-  log "Install APps and CLis"
-  brew bundle -v --file=~/dotfiles/Brewfile
-fi 
+log "Install APps and CLis"
+brew bundle -v --file=~/dotfiles/Brewfile
+
 # if .config has not made ,error will occur.
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
+
+# symlink each config file.
+stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
+stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
+stow -v -d ~/dotfiles/packages/editor -t ~ nvim
+ stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
+stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
+stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
+ln -sf ~/.config/yabai/yabairc ~/.yabairc 
+ln -sf ~/.config/yabai/skhdrc ~/.skhdrc
+ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 
 # asdf
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
@@ -89,24 +107,8 @@ for plugin in $(asdf plugin list); do
     fi
 done
 
-# symlink each config file.
-stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
-stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
-stow -v -d ~/dotfiles/packages/editor -t ~ nvim
- stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
-stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
-stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
-ln -sf ~/.config/yabai/yabairc ~/.yabairc 
-ln -sf ~/.config/yabai/skhdrc ~/.skhdrc
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-
 for plugin in $(asdf plugin list); do
     if is_runtime_versions_changed "$plugin"; then
-        if [ "$plugin" = nodejs ]; then
-            log 'Import release team keyring for Node.JS'
-            # more info -> https://github.com/asdf-vm/asdf-nodejs#install
-            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-        fi
 
         log "Install runtime: $plugin"
         asdf install "$plugin"
@@ -115,18 +117,13 @@ done
 
 log "asdf already finished"
 
-if ! is_dir ~/.config/yarn/global/node_modules; then
-    log 'Setup Yarn global'
-    yarn global add
-fi
-
 
 if [ ! -d ~/.local/share/omf/ ];then
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 fi
 # install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 
 cat << END
 
