@@ -22,19 +22,19 @@ ensure_dir() {
         mkdir -p "$path"
     fi
 }
-is_runtime_versions_changed () {
-    plugin="$1"
-    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
-    installed=$(asdf list "$plugin" 2>&1)
-
-    is_changed=
-    for version in $specified; do
-        match=$(echo "$installed" | grep "$version")
-        [ -z "$match" ] && is_changed=1
-    done
-
-    [ "$is_changed" ]
-}
+#is_runtime_versions_changed () {
+#    plugin="$1"
+#    specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
+#    installed=$(asdf list "$plugin" 2>&1)
+#
+#    is_changed=
+#    for version in $specified; do
+#        match=$(echo "$installed" | grep "$version")
+#        [ -z "$match" ] && is_changed=1
+#    done
+#
+#    [ "$is_changed" ]
+#}
 
 unlink_packages=
 verbose=
@@ -81,7 +81,7 @@ fi
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
 stow -v -d ~/dotfiles/packages/versioning -t ~ git-templates
 stow -v -d ~/dotfiles/packages/editor -t ~ nvim
- stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
+stow -v -d ~/dotfiles/packages/runtime -t ~ runtime
 stow -v -d ~/dotfiles/packages/wm -t ~ limelight yabai
 stow -v -d ~/dotfiles/packages/keybindings -t ~ karabiner
 ln -sf ~/.config/yabai/yabairc ~/.yabairc 
@@ -89,28 +89,28 @@ ln -sf ~/.config/yabai/skhdrc ~/.skhdrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 
 # asdf
-for plugin in $(awk '{print $1}' ~/.tool-versions); do
-    if ! is_dir ~/.asdf/plugins/"$plugin"; then
-        asdf plugin add "$plugin"
-    fi
-done
+#for plugin in $(awk '{print $1}' ~/.tool-versions); do
+#    if ! is_dir ~/.asdf/plugins/"$plugin"; then
+#        asdf plugin add "$plugin"
+#    fi
+#done
+#
+#for plugin in $(asdf plugin list); do
+#    if is_runtime_versions_changed "$plugin"; then
+#        log "Install runtime: $plugin"
+#        asdf install "$plugin"
+#    fi
+#done
 
-for plugin in $(asdf plugin list); do
-    if is_runtime_versions_changed "$plugin"; then
-        log "Install runtime: $plugin"
-        asdf install "$plugin"
-    fi
-done
-
-for plugin in $(asdf plugin list); do
-    if is_runtime_versions_changed "$plugin"; then
-
-        log "Install runtime: $plugin"
-        asdf install "$plugin"
-    fi
-done
-
-log "asdf already finished"
+#for plugin in $(asdf plugin list); do
+#    if is_runtime_versions_changed "$plugin"; then
+#
+#        log "Install runtime: $plugin"
+#        asdf install "$plugin"
+#    fi
+#done
+#
+#log "asdf already finished"
 
 
 if [ ! -d ~/.local/share/omf/ ];then

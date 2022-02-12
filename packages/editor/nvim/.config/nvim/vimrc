@@ -1,0 +1,1003 @@
+"          __
+"  __  __ /\_\    ___ ___   _ __   ___
+" /\ \/\ \\/\ \ /' __` __`\/\`'__\/'___\
+" \ \ \_/ |\ \ \/\ \/\ \/\ \ \ \//\ \__/
+"  \ \___/  \ \_\ \_\ \_\ \_\ \_\\ \____\
+"   \/__/    \/_/\/_/\/_/\/_/\/_/ \/____/
+
+let g:mapleader = "\<Space>" " Leaderキーをスペースに設定
+
+if has('nvim')
+  let g:loaded_python_provider   = 0
+  let g:loaded_python3_provider  = 0
+  let g:loaded_shada_plugin      = 1
+endif
+
+" Disable unnecessary default plugins
+let g:loaded_spellfile_plugin   = 1
+let g:loaded_tutor_mode_plugin  = 1
+let g:loaded_gzip               = 1
+let g:loaded_tar                = 1
+let g:loaded_tarPlugin          = 1
+let g:loaded_zip                = 1
+let g:loaded_zipPlugin          = 1
+let g:loaded_rrhelper           = 1
+let g:loaded_2html_plugin       = 1
+let g:loaded_vimball            = 1
+let g:loaded_vimballPlugin      = 1
+let g:loaded_getscript          = 1
+let g:loaded_getscriptPlugin    = 1
+let g:loaded_logipat            = 1
+let g:loaded_matchparen         = 1
+let g:loaded_man                = 1
+let g:loaded_netrw              = 1
+let g:loaded_netrwPlugin        = 1
+let g:loaded_netrwSettings      = 1
+let g:loaded_netrwFileHandlers  = 1
+let g:loaded_logiPat            = 1
+let g:did_install_default_menus = 1
+let g:skip_loading_mswin        = 1
+let g:did_install_syntax_menu   = 1
+let g:plug_shallow = 0
+
+" プラグイン設定 {{{
+" {{{ dein.vim settings
+let s:dein_dir = has('nvim') ? expand('~/.cache/dein/nvim') : expand('~/.cache/dein/vim')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . s:dein_repo_dir
+endif
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  call dein#add('kana/vim-operator-replace')
+  call dein#add('kana/vim-operator-user')
+
+  " syntax
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('cocopon/iceberg.vim')
+
+  " for development
+  call dein#add('neoclide/coc.nvim', {'rev': 'release'})
+  call dein#add('t9md/vim-choosewin')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('andymass/vim-matchup')
+  call dein#add('cohama/lexima.vim')
+  call dein#add('vim-test/vim-test')
+  call dein#add('junegunn/fzf', {'merged': 0})
+  call dein#add('junegunn/fzf.vim', {'depends': 'fzf'})
+  call dein#add('kshenoy/vim-signature')
+  call dein#add('lambdalisue/fern.vim')
+  call dein#add('lambdalisue/fern-hijack.vim')
+  call dein#add('lambdalisue/gina.vim')
+  call dein#add('lambdalisue/guise.vim')
+  call dein#add('markonm/traces.vim')
+  call dein#add('mattn/emmet-vim', {'merged': 0})
+  call dein#add('mattn/vim-sonictemplate')
+  call dein#add('simeji/winresizer')
+  call dein#add('vim-denops/denops.vim')
+  call dein#add('skanehira/command.vim')
+  call dein#add('skanehira/denops-germanium.vim')
+  call dein#add('skanehira/denops-docker.vim')
+  call dein#add('skanehira/getpr.vim')
+  call dein#add('skanehira/qfopen.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('skanehira/quickrun-neoterm.vim')
+  call dein#add('tyru/open-browser-github.vim')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('jparise/vim-graphql')
+  call dein#add('Shougo/ddc.vim')
+  call dein#add('matsui54/denops-popup-preview.vim')
+  call dein#add('tani/ddc-fuzzy')
+  call dein#add('mattn/vim-goimports')
+
+  " for documentation
+  call dein#add('glidenote/memolist.vim')
+  call dein#add('godlygeek/tabular')
+  call dein#add('gyim/vim-boxdraw', {'merged': 0})
+  call dein#add('mattn/vim-maketable')
+  call dein#add('shinespark/vim-list2tree', {'merged': 0})
+  call dein#add('skanehira/gyazo.vim')
+  call dein#add('skanehira/denops-translate.vim')
+  call dein#add('vim-jp/vimdoc-ja')
+  call dein#add('kat0h/bufpreview.vim', {'merged': 0})
+
+  " for develop vim/neovim plugin
+  call dein#add('LeafCage/vimhelpgenerator')
+  call dein#add('lambdalisue/vital-Whisky', {'merged': 0})
+  call dein#add('tweekmonster/helpful.vim')
+  call dein#add('vim-jp/vital.vim', {'merged': 0})
+
+  " other
+  call dein#add('itchyny/lightline.vim')
+
+  " end settings
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
+
+function! DeinClean() abort
+  let s:removed_plugins = dein#check_clean()
+  if len(s:removed_plugins) > 0
+    echom s:removed_plugins
+    call map(s:removed_plugins, "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+  endif
+endfunction
+
+command! CleanPlugins call DeinClean()
+" }}}
+
+" {{{ translate.vim
+nmap gr <Plug>(Translate)
+vmap gt <Plug>(VTranslate)
+" }}}
+
+" {{{ fern.vim
+function! s:fern_init() abort
+  nnoremap <buffer> <silent> q :q<CR>
+  map <buffer> <silent> <C-x> <Plug>(fern-action-open:split)
+  map <buffer> <silent> <C-v> <Plug>(fern-action-open:vsplit)
+  map <buffer> <silent> <C-t> <Plug>(fern-action-tcd)
+endfunction
+
+let g:fern#drawer_keep = 1
+let g:fern#default_hidden = 1
+let g:fern#default_exclude = '.git$'
+
+augroup fern-settings
+  au!
+  au FileType fern call s:fern_init()
+augroup END
+
+nnoremap <silent> <Leader>f :Fern . -drawer<CR>
+" }}}
+
+" {{{ gina.vim
+call gina#custom#mapping#nmap(
+      \ 'status', 'gp',
+      \ ':<C-u>terminal git push<CR>',
+      \ {'noremap': 1, 'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'status', 'gr',
+      \ ':<C-u>terminal gh pr create -d<CR>',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'status', 'gl',
+      \ ':<C-u>terminal git pull<CR>',
+      \ {'noremap': 1, 'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'status', 'cm',
+      \ ':<C-u>Gina commit<CR>',
+      \ {'noremap': 1, 'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'status', 'ca',
+      \ ':<C-u>Gina commit --amend<CR>',
+      \ {'noremap': 1, 'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'status', 'dp',
+      \ '<Plug>(gina-patch-oneside-tab)',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'status', 'ga',
+      \ '--',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#vmap(
+      \ 'status', 'ga',
+      \ '--',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'log', 'dd',
+      \ '<Plug>(gina-changes-of)',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'branch', 'n',
+      \ '<Plug>(gina-branch-new)',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'branch', 'D',
+      \ '<Plug>(gina-branch-delete)',
+      \ {'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ '/.*', 'q',
+      \ ':<C-u>bw!<CR>',
+      \ {'noremap': 1, 'silent': 1},
+      \)
+call gina#custom#mapping#nmap(
+      \ 'blame', '<C-o>',
+      \ ':<C-u>call GinaOpenPR()<CR>',
+      \ {'noremap': 1, 'silent': 1},
+      \)
+call gina#custom#command#option('log', '--opener', 'new')
+call gina#custom#command#option('status', '--opener', 'new')
+call gina#custom#command#option('branch', '--opener', 'new')
+
+let s:open = 'open'
+if has('linux')
+  let s:open = 'xdg-open'
+elseif has('win64')
+  let s:open = 'cmd /c start'
+endif
+
+function! GinaOpenPR() abort
+  let can = gina#action#candidates()
+  let url = trim(system(printf('%s %s', 'getpr', can[0].rev)))
+  call system(printf('%s %s', s:open, url))
+endfunction
+
+nnoremap <silent> gs :Gina status<CR>
+nnoremap <silent> gl :Gina log<CR>
+nnoremap <silent> gm :Gina blame<CR>
+nnoremap <silent> gb :Gina branch<CR>
+nnoremap <silent> gu :Gina browse --exact --yank :<CR>
+vnoremap <silent> gu :Gina browse --exact --yank :<CR>
+" }}}
+
+" {{{ quickrun.vim
+nnoremap <Leader>q :QuickRun -runner terminal<CR>
+let g:quickrun_config = {
+      \ 'typescript': {
+        \ 'command': 'deno',
+        \ 'tempfile': '%{printf("%s.ts", tempname())}',
+        \ 'cmdopt': '--no-check --unstable --allow-all',
+        \ 'exec': ['NO_COLOR=1 %C run %o %s'],
+        \ 'type': 'typescript',
+      \ },
+      \ 'deno/test': {
+        \ 'command': 'deno',
+        \ 'cmdopt': 'test --no-check --unstable --allow-all',
+        \ 'tempfile': '%{printf("%s_test.ts", tempname())}',
+        \ 'exec': ['NO_COLOR=1 %C %o %s'],
+        \ 'type': 'typescript',
+      \ },
+      \ 'deno/terminal': {
+        \ 'command': 'deno',
+        \ 'tempfile': '%{printf("%s.ts", tempname())}',
+        \ 'cmdopt': '--no-check --unstable --allow-all',
+        \ 'exec': ['%C run %o %s'],
+        \ 'type': 'typescript',
+        \ 'runner': 'neoterm',
+      \ },
+      \ 'go': {
+        \ 'command': 'go',
+        \ 'tempfile': '%{printf("%s.go", tempname())}',
+        \ 'exec': ['go mod init tmp; %C run %s'],
+        \ 'type': 'go',
+        \ 'runner': 'neoterm',
+      \ },
+      \ 'go/bench': {
+        \ 'command': 'go',
+        \ 'tempfile': '%{printf("%s_test.go", tempname())}',
+        \ 'exec': ['go mod init tmp; %C test -bench %s -benchmem'],
+        \ 'type': 'go',
+        \ 'runner': 'neoterm',
+      \ },
+      \ 'go/test': {
+        \ 'command': 'go',
+        \ 'tempfile': '%{printf("%s_test.go", tempname())}',
+        \ 'exec': ['go mod init tmp; %C test -v %s'],
+        \ 'type': 'go',
+      \ },
+      \ }
+
+augroup quickrun-config
+  au!
+  au FileType quickrun nnoremap <buffer> q :bw!<CR>
+augroup END
+" }}}
+
+" {{{ germanium.vim
+map <silent> gi :<C-u>Germanium -f="Cica-Regular"<CR>
+xmap <silent> gi :Germanium -f="Cica-Regular"<CR>
+" }}}
+
+" fzf settings {{{
+let g:fzf_layout = { 'down': '50%' }
+nnoremap <C-P> :Files<CR>
+" }}}
+
+" coc.nvim {{{
+command! LspRename :call CocActionAsync('rename')
+command! LspReferences :call CocActionAsync('jumpReferences')
+command! LspFormat :call CocActionAsync('format')
+command! LspImport :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+command! GoTagAdd :CocCommand go.tags.add.prompt
+command! GoTagRemove :CocCommand go.tags.remove.prompt
+
+" [
+"   {"text": "(e)dit", "value": "edit"}
+"   {"text": "(n)ew", "value": "new"}
+" ]
+" NOTE: text must contains '()' to detect input and its must be 1 character
+function! ChoseAction(actions) abort
+  call gh#_message(join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": ")
+  let result = getcharstr()
+  let result = filter(a:actions, { _, v -> v.text =~# printf(".*\(%s\).*", result)})
+  echo '' | redraw
+  return len(result) ? result[0].value : ""
+endfunction
+
+function! CocJumpAction() abort
+  let actions = [
+        \ {"text": "(s)plit", "value": "split"},
+        \ {"text": "(v)slit", "value": "vsplit"},
+        \ {"text": "(t)ab", "value": "tabedit"},
+        \ ]
+  return ChoseAction(actions)
+endfunction
+
+" GoTo code navigation.
+" use tagstack
+set tagfunc=CocTagFunc
+nnoremap <silent> <Leader>gj :<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>
+nnoremap <silent> <Leader>gi :<C-u>call CocActionAsync('jumpImplementation', 'split')<CR>
+nnoremap <silent> <Leader>gr :<C-u>call CocActionAsync('jumpReferences', 'split')<CR>
+
+nnoremap <silent> <Leader>i :LspImport<CR>
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" use manual completion
+inoremap <silent><expr> <C-x><C-o> coc#refresh()
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+let g:coc_global_extensions = [
+      \ 'coc-yaml',
+      \ 'coc-vimlsp',
+      \ 'coc-vetur',
+      \ 'coc-tsserver',
+      \ 'coc-sql',
+      \ 'coc-sh',
+      \ 'coc-rust-analyzer',
+      \ 'coc-json',
+      \ 'coc-deno',
+      \ 'coc-eslint',
+      \ 'coc-go',
+      \ ]
+
+call coc#config('diagnostic', {
+      \ 'enableMessage': 'never',
+      \ 'errorSign': '🐱',
+      \ 'warningSign': '💩',
+      \ 'infoSign': '🍌',
+      \ 'hintSign': '🧐',
+      \ 'virtualText': 1,
+      \ })
+
+call coc#config('coc.preferences.formatOnType', 'true')
+call coc#config('coc.preferences.useQuickfixForLocations', 'true')
+call coc#config('codeLens.enable', v:true)
+call coc#config('go.goplsOptions', {
+      \ 'completeUnimported': v:true,
+      \ 'codelenses': {
+        \ 'test': v:true,
+        \ },
+        \ })
+" disable auto completion
+"call coc#config('suggest.autoTrigger', 'none')
+call coc#config('coc.preferences', {
+      \ 'formatOnSaveFiletypes': [
+        \ 'go',
+        \ 'css',
+        \ 'js',
+        \ 'javascriptreact',
+        \ 'ts',
+        \ 'typescriptreact',
+        \ 'typescript',
+        \ 'html',
+        \ 'scss',
+        \ 'sass',
+        \ 'json',
+        \ 'rust',
+        \ 'sql',
+        \ 'bash',
+        \]})
+
+call coc#config('languageserver', {
+      \ 'terraform': {
+        \ 'command': 'terraform-ls',
+        \ 'trace.server': 'verbose',
+        \ 'filetypes': ['tf', 'terraform'],
+        \ 'args': ['serve'],
+      \ },
+      \ 'efm': {
+        \ 'command': 'efm-langserver',
+        \ 'args': [],
+        \ 'trace.server': 'verbose',
+        \ 'filetypes': ['markdown']
+        \ },
+      \ 'golangci-lint-languageserver': {
+        \ 'command': 'golangci-lint-langserver',
+        \ 'filetypes': ['go'],
+        \ 'initializationOptions': {
+        \   'command': ['golangci-lint', 'run', '--out-format', 'json']
+        \ }}
+      \})
+" }}}
+
+" vim-markdown {{{
+let g:vim_markdown_folding_disabled = 1
+" }}}
+
+" emmet {{{
+let g:user_emmet_install_global = 0
+let g:user_emmet_settings = {
+      \   'variables': {
+      \     'lang' : 'ja'
+      \   }
+      \ }
+let g:user_emmet_leader_key = '<C-g>'
+
+augroup emmet
+  au!
+  au FileType vue,html,css EmmetInstall
+  au FileType vue,html,css imap <buffer> <C-f> <plug>(emmet-expand-abbr)
+augroup END
+" }}}
+
+" sonictemplate.vim {{{
+let g:sonictemplate_vim_template_dir = ["~/.vim/template"]
+let g:sonictemplate_author = 'skanehira'
+let g:sonictemplate_license = 'MIT'
+let g:sonictemplate_vim_template_dir = expand('~/.vim/sonictemplate')
+imap <silent> <C-l> <plug>(sonictemplate-postfix)
+" }}}
+
+
+" {{{ MemoList
+let g:memolist_fzf = 1
+" }}}
+
+" {{{ gh.vim
+augroup gh_autocmd
+  au!
+  au User gh_open_issue call EnableAutoCompletionForGh('gh_issues')
+  au User gh_open_issue_assignees call EnableAutoCompletionForGh('gh_issues_assginees')
+  au User gh_open_issue_labels call EnableAutoCompletionForGh('gh_issues_labels')
+  au User gh_open_issues_search call EnableAutoCompletionForGh('gh_issues_search')
+augroup END
+
+function! EnableAutoCompletionForGh(kind) abort
+  call ddc#custom#patch_buffer('sources', [a:kind])
+  call ddc#custom#patch_buffer('specialBufferCompletion', v:true)
+  call ddc#custom#patch_buffer({'keywordPattern':
+        \ "[a-zA-Z0-9_À-ÿ\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf]*"})
+
+  if a:kind ==# 'gh_issues'
+    call ddc#custom#patch_buffer('sourceOptions', {
+          \ 'gh_issues': {
+            \  'matcherKey': 'menu',
+            \  'minAutoCompleteLength': 1,
+            \ }})
+  elseif a:kind ==# 'gh_issues_search'
+    call ddc#custom#patch_buffer('sourceOptions', {
+          \ 'gh_issues_search': {
+            \  'minAutoCompleteLength': 1,
+            \ }})
+  elseif a:kind ==# 'gh_issues_assginees'
+    call ddc#custom#patch_buffer('sourceOptions', {
+          \ 'gh_issues_assginees': {
+            \  'minAutoCompleteLength': 1,
+            \ }})
+  elseif a:kind ==# 'gh_issues_labels'
+    call ddc#custom#patch_buffer('sourceOptions', {
+          \ 'gh_issues_labels': {
+            \  'minAutoCompleteLength': 1,
+            \ }})
+  endif
+  call popup_preview#enable()
+endfunction
+" }}}
+
+" {{{ vim-operator-replace
+vmap p <Plug>(operator-replace)
+" }}}
+
+" {{{ getpr.vim
+map go <Plug>(getpr-open)
+map gy <Plug>(getpr-yank)
+" }}}
+
+" {{{ gyazo.vim
+let g:gyazo_insert_markdown_url = 1
+nmap gup <Plug>(gyazo-upload)
+" }}}
+
+" {{{ vim-choosewin
+nmap <C-f> <Plug>(choosewin)
+" }}}
+
+" {{{ lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \ 'left': [ ['mode', 'paste'], ['readonly', 'branchName', 'filepath', 'modified'] ]
+      \ },
+      \ 'component_function':{
+      \ 'filepath': 'FilePath',
+      \ },
+      \ }
+
+function! FilePath()
+  if winwidth(0) > 90
+    return expand("%:s")
+  else
+    return expand("%:t")
+  endif
+endfunction
+" }}}
+
+" {{{ command.vim
+nmap c: <Plug>(command_buffer_open)
+" }}}
+
+syntax enable " シンタックスを有効にする
+filetype plugin indent on " ファイル形式別プラグインとインデントを有効にする
+
+" カラースキームを使う {{{
+colorscheme iceberg
+" icebergはターミナルを16色に設定するのを回避
+if !has('nvim')
+  augroup iceberg
+    au!
+    au ColorScheme * unlet g:terminal_ansi_colors
+  augroup END
+endif
+set background=dark
+" visual modeのhighlight変更
+hi Visual ctermfg=159 ctermbg=23 guifg=#b3c3cc guibg=#384851
+" }}}
+
+" オプション {{{
+set noequalalways
+set encoding=utf-8
+set t_ut=
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
+set belloff=all " ミュート
+set backspace=2 " バックスペースとCtrl+hで削除を有効にする
+set smartindent autoindent " 改行時自動インデント
+set incsearch " インクリメントサーチを有効にする
+set ignorecase " 検索時大文字小文字を区別しない
+set smartcase " 検索時に大文字を入力した場合ignorecaseが無効になる
+set hlsearch " ハイライトサーチを有効にする
+set undolevels=1000 " undoできる最大数
+set scrolloff=100 " カーソルが常に中央に来るようにする
+set lazyredraw ttyfast " マクロで効果発揮
+set synmaxcol=256 "一行が長いファイルをsyntaxを制御することで軽くする
+set cursorline " カーソルラインを表示する
+set wildmenu " wildmenuを有効にする
+set virtualedit=block " 矩形選択時に文字の無いところまで選択範囲を広げる
+set helplang=ja " ヘルプの言語を日本語優先にする
+set autowrite " 他のバッファに移動する時に自動保存
+set noswapfile " swapファイルを作成しない
+set showtabline=2 " タブを表示しない
+set noshowmode
+set laststatus=2
+"set noequalalways " ウィンドウが同じサイズにならないようにする
+"set winfixheight " ウィンドウの高さを保つ
+"set winfixwidth " ウィンドウの幅を保つ
+set list listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:% " listの設定
+if !has('nvim')
+  set nrformats+=unsigned " 数値の加減算を考慮
+  set cursorlineopt=line " 行のみハイライト
+  set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,terminal " セッションで保存する対象
+endif
+if has("mac") | set clipboard+=unnamed | else | set clipboard^=unnamedplus | endif " クリップボードを共有
+set diffopt=vertical
+set completeopt-=preview " disable preview window
+
+" 拡張子ごとのインデント設定 {{{
+set tabstop=2 shiftwidth=2 softtabstop=2
+
+augroup fileTypeIndent
+  au!
+  au FileType go setlocal tabstop=4 shiftwidth=4
+  au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType php setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType vue  setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType sh setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType fish setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType zsh setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType rust setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  au FileType markdown setlocal tabstop=2 shiftwidth=2 expandtab
+augroup END
+" }}}
+
+" {{{ シンタックスをクリア
+augroup fileTypeSyntaxClear
+  au!
+  au FileType go syntax clear
+  au FileType vim syntax clear
+  au FileType html syntax clear
+  au FileType javascript syntax clear
+  au FileType typescript syntax clear
+  au FileType vue  syntax clear
+augroup END
+" }}}
+
+" grepした結果をquickfixに表示する {{{
+augroup grepwindow
+  au!
+  au QuickFixCmdPost *grep* cwindow
+augroup END
+" }}}
+
+" カーソルラインの位置を保存する {{{
+augroup cursorlineRestore
+  au!
+  au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal! g'\"" |
+        \ endif
+augroup END
+" }}}
+
+" undoの保存先 {{{
+if has('persistent_undo')
+  if has('nvim')
+    let undo_path = expand('~/.config/nvim/undo')
+  else
+    let undo_path = expand('~/.vim/undo')
+  endif
+  " ディレクトリが存在しない場合は作成
+  if !isdirectory(undo_path)
+    call mkdir(undo_path, 'p')
+  endif
+  exe 'set undodir=' .. undo_path
+  set undofile
+endif
+" }}}
+" }}}
+
+" キーマップ {{{
+if has('nvim')
+  unmap Y
+endif
+
+" ^と0を0に統一
+nnoremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\s\+$' ? '0' : '^'
+
+" *でカーソルを移動しないようにする
+noremap * *N
+
+" ファイル保存と終了
+nnoremap <Leader>w :w<CR>
+
+" 検索
+nnoremap <C-G><C-G> :Grep <C-R><C-W><CR>
+
+" 置換
+nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
+
+" ハイライトを削除する
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
+
+" vimrcを開く
+nnoremap <Leader>. :new ~/.vimrc<CR>
+nnoremap <Leader>s :exe "source" expand("%")<CR>
+
+" テキストオブジェクトキーマッピング {{{
+onoremap 8 i(
+onoremap 2 i"
+onoremap 7 i'
+onoremap @ i`
+onoremap [ i[
+onoremap { i{
+
+onoremap a8 a(
+onoremap a2 a"
+onoremap a7 a'
+onoremap a@ a`
+
+" visual
+nnoremap v8 vi(
+nnoremap v2 vi"
+nnoremap v7 vi'
+nnoremap v@ vi`
+nnoremap v[ vi[
+nnoremap v{ vi{
+
+nnoremap va8 va(
+nnoremap va2 va"
+nnoremap va7 va'
+nnoremap va@ va`
+" }}}
+
+" 行先頭と行末
+noremap H ^
+noremap L g_
+
+" タブ切り替え
+nnoremap <C-l> gt
+nnoremap <C-h> gT
+
+" ターミナル関連 {{{
+tnoremap <C-]> <C-\><C-n>
+function! s:termopen() abort
+  let bufname = bufname()
+  let parts = split(bufname, ' ')
+  let cmd = &shell
+  if len(parts) > 1
+    " like :new term [command] [args]
+    let cmd = join(parts[1:], " ")
+  endif
+  call termopen(cmd)
+endfunction
+
+if has('nvim')
+  augroup neovim-terminal
+    au!
+    au TermOpen * startinsert
+  augroup END
+endif
+
+augroup terminal
+  au!
+  au BufNewFile term* ++nested call s:termopen()
+augroup END
+
+nnoremap <Leader>tm :new term<CR>
+" }}}
+
+" 改行
+nnoremap <C-j> o<ESC>
+nnoremap <C-k> O<ESC>
+nnoremap o A<CR>
+
+" Emacs風のキーマップ
+imap <C-h> <BS>
+inoremap <C-k> <C-o>C
+inoremap <silent> <C-f> <Right>
+inoremap <silent> <C-b> <Left>
+inoremap <silent> <C-e> <C-o>A
+inoremap <silent> <C-a> <C-o>I
+
+" C-v でペースト
+let g:clipboard_register = has('linux') || has('unix') ? '+' : '*'
+inoremap <expr> <C-v> printf('<C-r><C-o>%s', g:clipboard_register)
+cnoremap <expr> <C-v> printf('<C-r><C-o>%s', g:clipboard_register)
+
+" ヘルプ
+augroup help-mapping
+  au!
+  au FileType help nnoremap <buffer> <silent>q :bw!<CR>
+augroup END
+" }}}
+
+" コマンドラインで単語移動 {{{
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+" }}}
+
+" Better <C-n>/<C-p> in Command {{{
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <Up> <C-p>
+cnoremap <Down> <C-n>
+" }}}
+
+" {{{ ディレクトリ自動生成
+function! s:auto_mkdir(dir)
+  if !isdirectory(a:dir)
+    call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+  endif
+endfunction
+augroup auto-mkdir
+  au!
+  au BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'))
+augroup END
+" }}}
+
+" {{{ lazygit
+nnoremap <silent> gp :call system('source ~/.zshrc && tmuxpopup lazygit')<CR>
+" }}}
+
+" {{{ grep
+function! s:grep(word) abort
+  let cmd = printf('rg --vimgrep --hidden %s', a:word)
+  lgete system(cmd) | lw
+endfunction
+
+command! -nargs=1 -complete=file Grep call <SID>grep(<q-args>)
+" }}}
+
+" {{{ zenn
+function! s:create_zenn_article(article_name) abort
+  let date = strftime("%Y-%m-%d")
+  let slug = date . "-" . a:article_name
+  call system("npx zenn new:article --emoji 🦍 --slug " . slug )
+  let article_path = "articles/" . slug . ".md"
+  exe "edit " . article_path
+endfunction
+
+command! -nargs=1 ZennCreateArticle call <SID>create_zenn_article(<f-args>)
+" }}}
+
+" {{{ vim-test
+let test#javascript#denotest#options = {
+    \ 'all': '--unstable -A'
+    \ }
+nnoremap <silent> <space>tn <cmd>TestNearest<CR>
+" }}}
+
+" {{{ open-browser.vim
+nmap gop <Plug>(openbrowser-open)
+" }}}
+
+" {{{ qfopen.vim
+augroup qfopen-settings
+  function! s:qfopen_keymap() abort
+    nmap <buffer> a <Plug>(qfopen-action)
+    nmap <buffer> <C-v> <Plug>(qfopen-open-vsplit)
+    nmap <buffer> <C-x> <Plug>(qfopen-open-split)
+    nmap <buffer> <C-t> <Plug>(qfopen-open-tab)
+    nnoremap <buffer> <silent> q :q<CR>
+  endfunction
+  au!
+  au FileType qf call s:qfopen_keymap()
+augroup END
+" }}}
+
+" {{{ for dlv
+function! Get_breakpoint_line() abort
+  let line = printf("break %s:%s", expand("%:p"), line("."))
+  call setreg("*", line)
+  echom line
+endfunction
+
+nnoremap gdy :call Get_breakpoint_line()<CR>
+" }}}
+
+function! ActiveBrowserTab(line) abort
+  let id = a:line[1:match(a:line, "\]", 0, 1)-1]
+  call system("open -b $CHROME_BUNDLE_IDENTIFIER")
+  call system("chrome-cli activate -t " .. id)
+endfunction
+
+nnoremap <silent> gdt :call fzf#run({
+      \ "source": systemlist("chrome-cli list tabs"),
+      \ "window": 'botright 10new',
+      \ "sink": function("ActiveBrowserTab")})<CR>
+
+" {{{ markdown
+function! InsertMarkdownLink() abort
+  " use register `9`
+  let old = getreg('9')
+  let link = trim(getreg(g:clipboard_register))
+  if link !~# '^http.*'
+    normal! gvp
+    return
+  endif
+
+  " replace `[text](link)` to selected text
+  normal! gv"9y
+  let word = getreg(9)
+  let newtext = printf('[%s](%s)', word, link)
+  call setreg(9, newtext)
+  normal! gv"9p
+
+  " restore old data
+  call setreg(9, old)
+endfunction
+
+augroup markdown-insert-link
+  au!
+  au FileType markdown xnoremap <buffer> <silent> p :<C-u>call InsertMarkdownLink()<CR>
+augroup END
+" }}}
+
+" {{{ ddc.vim
+" disable auto completion
+function! DdcAutoCompletionDisable() abort
+  call ddc#custom#patch_global('autoCompleteEvents', [])
+  call ddc#custom#patch_global('completionMode', 'manual')
+endfunction
+
+" enabel auto completion
+function! DdcAutoCompletionEnable() abort
+  call ddc#custom#patch_global('autoCompleteEvents', ["InsertEnter", "TextChangedI", "TextChangedP"])
+  call ddc#custom#patch_global('completionMode', 'popupmenu')
+endfunction
+
+call ddc#custom#patch_global('sourceOptions', {
+  \   '_': {
+  \     'matchers': ['matcher_fuzzy'],
+  \     'sorters': ['sorter_fuzzy'],
+  \     'converters': ['converter_fuzzy']
+  \   }
+  \ })
+
+" Change source options
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
+
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+
+call DdcAutoCompletionDisable()
+call ddc#enable()
+" }}}
+
+" {{{ git message
+function! s:select_commit_message_type() abort
+  let line = substitute(getline('.'), '^#\s*', '', 'g')
+  let title = printf('%s: ', split(line, ' ')[0])
+  silent! normal! "_dip
+  silent! put! =title
+  silent! startinsert!
+endfunction
+
+function! s:git_commit_keymap() abort
+  let messagefile = trim(system('git rev-parse --show-toplevel')) . "/.gitmessage"
+  if !filereadable(messagefile)
+    return
+  endif
+
+  nnoremap <buffer> <CR><CR> <Cmd>call <SID>select_commit_message_type()<CR>
+endfunction
+
+augroup git-commit
+  au!
+  au FileType gina-commit call <SID>git_commit_keymap()
+augroup END
+" }}}
+
+" {{{ LanguageTool
+function! s:languagetool_lint() abort
+  let fname = expand('%')
+  if !filereadable(fname) || &modified
+    let fname = tempname()
+    call writefile(getline(1, '$'), fname)
+  endif
+  let cmd = printf('languagetool-lint %s', fname)
+  lgete system(cmd) | lw
+endfunction
+
+command! LanguageToolLint call <SID>languagetool_lint()
+" }}}
+
+" {{{ jumpcursor.vim
+nmap [j <Plug>(jumpcursor-jump)
+" }}}
+
+" vim: foldmethod=marker
