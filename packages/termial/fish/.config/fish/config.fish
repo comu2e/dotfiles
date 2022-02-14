@@ -149,11 +149,14 @@ if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
 end
 
-source /usr/local/opt/asdf/asdf.fish
 
 starship init fish | source
 
+
+set -x PATH ~/go/bin $PATH
 set -x GOENV_ROOT $HOME/.goenv
 set -x PATH $GOENV_ROOT/bin $PATH
 eval (goenv init - | source)
 set -x PATH $GOPATH/bin $PATH
+
+source ~/.asdf/asdf.fish

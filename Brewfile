@@ -13,6 +13,14 @@ tap "koekeishiya/formulae"
 tap "sachaos/tap"
 tap "tldr-pages/tldr"
 brew "asdf"
+brew "automake"
+brew "autoconf"
+brew "readline"
+brew "libxslt"
+brew "libtool"
+brew "libyaml"
+brew "openssl"
+brew "unixodbc"
 brew "awscli"
 brew "bat"
 brew "bfg"
@@ -84,10 +92,6 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "coreutils"
 brew "gpg"
-brew "go"
-brew "deno"
-brew "python3"
-brew "nodebrew"
 
 cask "alacritty"
 cask "alfred"
@@ -125,4 +129,3 @@ mas "Authenticator", id: 1538761576
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
 mas "Notion Web Clipper", id: 1559269364
-mas "Paste", id: 967805235
