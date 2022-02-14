@@ -111,11 +111,20 @@ done
 #
 log "asdf already finished"
 
-
+#install omf
 if [ ! -d ~/.local/share/omf/ ];then
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 fi
 
+#install dein
+if [ ! -d $HOME/.cache/dein ];then
+  
+  mkdir $HOME/.cache/dein
+  cd $HOME/.cache/dein
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+# For example, we just use `~/.cache/dein` as installation directory
+  sh ./installer.sh ~/.cache/dein
+fi
 cat << END
 
 **************************************************

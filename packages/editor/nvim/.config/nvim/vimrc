@@ -5,21 +5,20 @@
 "  \ \___/  \ \_\ \_\ \_\ \_\ \_\\ \____\
 "   \/__/    \/_/\/_/\/_/\/_/\/_/ \/____/
 
-
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/Users/eiji/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/eiji/.vim/dein')
+call dein#begin('$HOME/.cache/dein')
 
 " Let dein manage dein
 " Required:
-call dein#add('/Users/eiji/.vim/dein/repos/github.com/Shougo/dein.vim')
+call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/neosnippet.vim')
@@ -33,10 +32,11 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+"if dein#check_install()
+"  call dein#install()
+"endif
 
+"End dein Scripts-------------------------
 " Leaderキーをスペースに設定
 let mapleader = "\<Space>"
 
@@ -75,6 +75,9 @@ let g:did_install_syntax_menu   = 1
 let g:plug_shallow = 0
 let g:denops#deno = "/Users/eiji/.asdf/shims/deno"
 let g:quickrun_config = {'_': {}}
+let g:airline_theme='one'
+
+
 
 if has('nvim')
   " Use 'neovim_job' in Neovim
@@ -629,8 +632,9 @@ set t_ut=
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 set belloff=all " ミュート
-set backspace=2 " バックスペースとCtrl+hで削除を有効にする
 set smartindent autoindent " 改行時自動インデント
+set backspace=indent,eol,start
+
 set incsearch " インクリメントサーチを有効にする
 set ignorecase " 検索時大文字小文字を区別しない
 set smartcase " 検索時に大文字を入力した場合ignorecaseが無効になる
