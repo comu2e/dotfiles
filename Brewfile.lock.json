@@ -29,7 +29,7 @@
         "revision": "f56394ae8dc2501f03bce90811eccef6fcce4d96"
       },
       "homebrew/core": {
-        "revision": "93f97cea66f61b5bb5022e08c5589803470775a1"
+        "revision": "34b76a8807cf9dedb91b250e86d80392405aa515"
       },
       "homebrew/services": {
         "revision": "db2a6203fd4ae47ac5c150d03cb515e615b9cbe6"
@@ -3397,7 +3397,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.14",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "93f97cea66f61b5bb5022e08c5589803470775a1",
+        "Homebrew/homebrew-core": "34b76a8807cf9dedb91b250e86d80392405aa515",
         "CLT": "12.5.0.22.11",
         "Xcode": "13.2.1",
         "macOS": "11.4"
