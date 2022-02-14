@@ -565,6 +565,7 @@ function! EnableAutoCompletionForGh(kind) abort
   call popup_preview#enable()
 endfunction
 " }}}
+"
 
 " {{{ vim-operator-replace
 vmap p <Plug>(operator-replace)
@@ -580,13 +581,18 @@ let g:gyazo_insert_markdown_url = 1
 nmap gup <Plug>(gyazo-upload)
 " }}}
 
+" {{{ colorschem
+call dein#add('tomasr/molokai', {'merged': 0})
+call dein#source('molokai')
+colorscheme molokai
+" }}}
 " {{{ vim-choosewin
 nmap <C-f> <Plug>(choosewin)
 " }}}
 
 " {{{ lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'molokai',
       \ 'active': {
       \ 'left': [ ['mode', 'paste'], ['readonly', 'branchName', 'filepath', 'modified'] ]
       \ },
@@ -610,6 +616,7 @@ nmap c: <Plug>(command_buffer_open)
 
 syntax enable " シンタックスを有効にする
 filetype plugin indent on " ファイル形式別プラグインとインデントを有効にする
+
 
 " カラースキームを使う {{{
 colorscheme iceberg
