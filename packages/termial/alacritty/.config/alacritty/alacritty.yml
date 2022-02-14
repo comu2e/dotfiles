@@ -79,40 +79,40 @@ key_bindings:
   - { key: Q, mods: Control, chars: "\x11" }
   # tmux prefix
 colors:
-  name: VisiBone
-  author: ""
+  name: Atelierlakeside (dark)
+  author: Chris Kempson
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
+    background: "#161b1d"
+    foreground: "#7ea2b4"
   cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    text: "#161b1d"
+    cursor: "#7ea2b4"
   normal:
-    black: "#666666"
-    red: "#cc6666"
-    green: "#66cc99"
-    yellow: "#cc9966"
-    blue: "#6699cc"
-    magenta: "#cc6699"
-    cyan: "#66cccc"
-    white: "#cccccc"
+    black: "#161b1d"
+    red: "#d22d72"
+    green: "#568c3b"
+    yellow: "#8a8a0f"
+    blue: "#257fad"
+    magenta: "#5d5db1"
+    cyan: "#2d8f6f"
+    white: "#7ea2b4"
   bright:
-    black: "#999999"
-    red: "#ff9999"
-    green: "#99ffcc"
-    yellow: "#ffcc99"
-    blue: "#99ccff"
-    magenta: "#ff99cc"
-    cyan: "#99ffff"
-    white: "#ffffff"
+    black: "#5a7b8c"
+    red: "#d22d72"
+    green: "#568c3b"
+    yellow: "#8a8a0f"
+    blue: "#257fad"
+    magenta: "#5d5db1"
+    cyan: "#2d8f6f"
+    white: "#ebf8ff"
 cursor:
   style:
     shape: Beam
   vi_mode_style:
     shape: Block
-theme: Visibone
+theme: Atelierlakeside.dark
 
 shell:
-   program: /usr/local/bin/fish
-   args:
-     - --login
+  program: /usr/local/bin/fish
+  args:
+    - --login
