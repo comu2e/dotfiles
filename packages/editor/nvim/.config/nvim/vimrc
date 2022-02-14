@@ -29,7 +29,6 @@ call dein#end()
 
 " Required:
 filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 "if dein#check_install()
@@ -105,8 +104,6 @@ if dein#load_state(s:dein_dir)
   call dein#add('kana/vim-operator-user')
 
   " syntax
-  call dein#add('plasticboy/vim-markdown')
-  call dein#add('cocopon/iceberg.vim')
 
   " for development
   call dein#add('neoclide/coc.nvim', {'rev': 'release'})
@@ -582,24 +579,14 @@ nmap gup <Plug>(gyazo-upload)
 " }}}
 
 " {{{ colorschem
-call dein#add('arcticicestudio/nord-vim', {'merged': 0})
-call dein#source('nord-vim')
-colorscheme nord-vim
+
+call dein#add('tomasr/molokai')
+colorscheme molokai
 " }}}
 " {{{ vim-choosewin
 nmap <C-f> <Plug>(choosewin)
 " }}}
-
-" {{{ lightline
-let g:lightline = {
-      \ 'colorscheme': 'nord-vim',
-      \ 'active': {
-      \ 'left': [ ['mode', 'paste'], ['readonly', 'branchName', 'filepath', 'modified'] ]
-      \ },
-      \ 'component_function':{
-      \ 'filepath': 'FilePath',
-      \ },
-      \ }
+" カラースキームを使う {{{
 
 function! FilePath()
   if winwidth(0) > 90
@@ -614,23 +601,9 @@ endfunction
 nmap c: <Plug>(command_buffer_open)
 " }}}
 
-syntax enable " シンタックスを有効にする
 filetype plugin indent on " ファイル形式別プラグインとインデントを有効にする
 
 
-" カラースキームを使う {{{
-colorscheme iceberg
-" icebergはターミナルを16色に設定するのを回避
-if !has('nvim')
-  augroup iceberg
-    au!
-    au ColorScheme * unlet g:terminal_ansi_colors
-  augroup END
-endif
-set background=dark
-" visual modeのhighlight変更
-hi Visual ctermfg=159 ctermbg=23 guifg=#b3c3cc guibg=#384851
-" }}}
 
 " オプション {{{
 set noequalalways
