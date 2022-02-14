@@ -159,4 +159,7 @@ set -x PATH $GOENV_ROOT/bin $PATH
 eval (goenv init - | source)
 set -x PATH $GOPATH/bin $PATH
 
+export DENO_INSTALL="~/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 source ~/.asdf/asdf.fish
