@@ -38,3 +38,18 @@ If not working keybindings,execute below command,and debug.
 $ skhd -V
 ```
 
+### Vim
+Set up <Leader> is <Space>
+```
+usage 
+$ vim
+$ #normal mode
+$ <Space> + (f,or ....)
+```
+
+Dein
+
+```
+$ vim
+$ <Esc> :call dein#Update()
+```

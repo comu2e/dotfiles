@@ -582,9 +582,9 @@ nmap gup <Plug>(gyazo-upload)
 " }}}
 
 " {{{ colorschem
-call dein#add('tomasr/molokai', {'merged': 0})
-call dein#source('molokai')
-colorscheme molokai
+call dein#add('arcticicestudio/nord-vim', {'merged': 0})
+call dein#source('nord-vim')
+colorscheme nord-vim
 " }}}
 " {{{ vim-choosewin
 nmap <C-f> <Plug>(choosewin)
@@ -592,7 +592,7 @@ nmap <C-f> <Plug>(choosewin)
 
 " {{{ lightline
 let g:lightline = {
-      \ 'colorscheme': 'molokai',
+      \ 'colorscheme': 'nord-vim',
       \ 'active': {
       \ 'left': [ ['mode', 'paste'], ['readonly', 'branchName', 'filepath', 'modified'] ]
       \ },
