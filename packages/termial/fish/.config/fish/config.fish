@@ -100,7 +100,6 @@ alias tcon="vim ~/.config/tmux/.tmux.conf"
 alias alcon="vim ~/.config/alacritty/alacritty.yml"
 alias m="make"
 alias tk="tmux kill-server"
-alias vpcon="vim ~/.config/nvim/plug.vim"
 #aws
 abbr -a awsssm aws ecs update-service \
     --cluster example-cluster \

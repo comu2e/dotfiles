@@ -38,7 +38,8 @@ if dein#check_install()
 endif
 
 " Leaderキーをスペースに設定
-let g:mapleader = "," 
+let mapleader = "\<Space>"
+
 
 if has('nvim')
   let g:loaded_python_provider   = 0
@@ -72,7 +73,16 @@ let g:did_install_default_menus = 1
 let g:skip_loading_mswin        = 1
 let g:did_install_syntax_menu   = 1
 let g:plug_shallow = 0
+let g:denops#deno = "/Users/eiji/.asdf/shims/deno"
+let g:quickrun_config = {'_': {}}
 
+if has('nvim')
+  " Use 'neovim_job' in Neovim
+  let g:quickrun_config._.runner = 'neovim_job'
+elseif exists('*ch_close_in')
+  " Use 'job' in Vim which support job feature
+  let g:quickrun_config._.runner = 'job'
+endif
 " プラグイン設定 {{{
 " {{{ dein.vim settings
 let s:dein_dir = has('nvim') ? expand('~/.cache/dein/nvim') : expand('~/.cache/dein/vim')
@@ -288,7 +298,7 @@ vnoremap <silent> gu :Gina browse --exact --yank :<CR>
 " }}}
 
 " {{{ quickrun.vim
-nnoremap <Leader>q :QuickRun -runner terminal<CR>
+nnoremap <Leader>q :QuickRun -runner shell<CR>
 let g:quickrun_config = {
       \ 'typescript': {
         \ 'command': 'deno',
@@ -501,7 +511,7 @@ augroup END
 
 " sonictemplate.vim {{{
 let g:sonictemplate_vim_template_dir = ["~/.vim/template"]
-let g:sonictemplate_author = 'skanehira'
+let g:sonictemplate_author = 'comu2e'
 let g:sonictemplate_license = 'MIT'
 let g:sonictemplate_vim_template_dir = expand('~/.vim/sonictemplate')
 imap <silent> <C-l> <plug>(sonictemplate-postfix)
