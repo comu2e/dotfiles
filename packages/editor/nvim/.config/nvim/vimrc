@@ -503,7 +503,7 @@ augroup END
 " }}}
 
 " sonictemplate.vim {{{
-let g:sonictemplate_vim_template_dir = ["~/.vim/template"]
+"let g:sonictemplate_vim_template_dir = ["~/.vim/template"]
 let g:sonictemplate_author = 'comu2e'
 let g:sonictemplate_license = 'MIT'
 let g:sonictemplate_vim_template_dir = expand('~/.vim/sonictemplate')
