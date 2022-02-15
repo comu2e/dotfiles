@@ -47,9 +47,15 @@ $ #normal mode
 $ <Space> + (f,or ....)
 ```
 
-Dein
+#### Dein
 
 ```
 $ vim
 $ <Esc> :call dein#Update()
+```
+
+#### sonic-template
+```
+$vim main.go
+$<insert mode> main<C-l> 
 ```
