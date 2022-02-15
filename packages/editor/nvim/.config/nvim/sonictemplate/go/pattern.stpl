@@ -18,6 +18,16 @@ errn$
 		{{_cursor_}}
 	}
 
+go$
+	go func(){
+		{{_cursor_}}
+	}()
+
+sync\.\(\S\+\)$
+	{{$1}}.Lock()
+	{{_cursor_}}
+	{{$1}}.UnLock()
+
 create\.file$
 	file, err := os.Create({{_cursor_}})
 	if err != nil {

@@ -37,7 +37,8 @@ function awsp
 end
 
 alias vim="nvim"
-alias ga="git add"
+alias g="git"
+alias ga="git add ."
 alias gbd="git branch -d"
 alias gb='git branch'
 alias gcm='git commit -m'

@@ -5,7 +5,7 @@
 "  \ \___/  \ \_\ \_\ \_\ \_\ \_\\ \____\
 "   \/__/    \/_/\/_/\/_/\/_/\/_/ \/____/
 
-"dein Scripts-----------------------------
+"dein Scripts {{{
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -35,8 +35,8 @@ filetype plugin indent on
 "  call dein#install()
 "endif
 
-"End dein Scripts-------------------------
-" Leaderキーをスペースに設定
+" }}}
+" Leaderキーをスペースに設定 {{{
 let mapleader = "\<Space>"
 
 
@@ -76,7 +76,7 @@ let g:denops#deno = "/Users/eiji/.asdf/shims/deno"
 let g:quickrun_config = {'_': {}}
 let g:airline_theme='one'
 
-
+"}}}
 " プラグイン設定 {{{
 "{{{ dein.vim settings
 let s:dein_dir = has('nvim') ? expand('~/.cache/dein/nvim') : expand('~/.cache/dein/vim')
@@ -622,6 +622,7 @@ filetype plugin indent on " ファイル形式別プラグインとインデン�
 
 " オプション {{{
 set noequalalways
+set nolist
 set encoding=utf-8
 set t_ut=
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
@@ -650,7 +651,6 @@ set laststatus=2
 "set noequalalways " ウィンドウが同じサイズにならないようにする
 "set winfixheight " ウィンドウの高さを保つ
 "set winfixwidth " ウィンドウの幅を保つ
-set list listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:% " listの設定
 if !has('nvim')
   set nrformats+=unsigned " 数値の加減算を考慮
   set cursorlineopt=line " 行のみハイライト

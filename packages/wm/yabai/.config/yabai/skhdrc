@@ -19,7 +19,7 @@ alt - i : yabai -m window --insert east
 alt + shift - i : yabai -m window --insert south
 
 # Applications
-alt - return : alacritty --working-directory $HOME/projects/github.com/JunichiSugiura
+alt - return : alacritty --working-directory $HOME
 alt - return : open /Applications/Alacritty.app
 alt + shift - n : open /Applications/Notion.app
 

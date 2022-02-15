@@ -5,6 +5,7 @@
   st = status
   a = add 
   co = checkout
+  ca = commit -am
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
   pod = pull origin develop
   pom = pull oriigin main
