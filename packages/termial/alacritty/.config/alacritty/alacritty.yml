@@ -18,7 +18,7 @@ scrolling:
   history: 10000
 
   # スクロール量は3行
-  multiplier: 3
+  multiplier: 5
 
 # Font
 font:

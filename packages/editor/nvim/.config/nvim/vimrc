@@ -510,7 +510,6 @@ let g:sonictemplate_vim_template_dir = expand('~/.vim/sonictemplate')
 imap <silent> <C-l> <plug>(sonictemplate-postfix)
 " }}}
 
-
 " {{{ MemoList
 let g:memolist_fzf = 1
 " }}}
@@ -555,7 +554,6 @@ function! EnableAutoCompletionForGh(kind) abort
   call popup_preview#enable()
 endfunction
 " }}}
-"
 
 " {{{ vim-operator-replace
 vmap p <Plug>(operator-replace)
@@ -571,7 +569,7 @@ let g:gyazo_insert_markdown_url = 1
 nmap gup <Plug>(gyazo-upload)
 " }}}
 
-" {{{ colorschem
+" {{{ colorscheme
 
 call dein#source('nord')
 " カラースキームを使う {{{
@@ -617,7 +615,6 @@ nmap c: <Plug>(command_buffer_open)
 " }}}
 
 filetype plugin indent on " ファイル形式別プラグインとインデントを有効にする
-
 
 
 " オプション {{{
