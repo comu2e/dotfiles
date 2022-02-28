@@ -92,6 +92,7 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "coreutils"
 brew "gpg"
+brew "mas-cli/tap/mas"
 
 cask "alacritty"
 cask "alfred"
@@ -122,6 +123,7 @@ cask "virtualbox"
 cask "session-manager-plugin"
 cask "keeweb"
 cask "visual-studio-code"
+cask "stoplight-studio"
 
 mas "Xcode", id: 497799835
 mas "Display Menu", id: 549083868

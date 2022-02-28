@@ -40,6 +40,7 @@ alias vim="nvim"
 alias g="git"
 alias ga="git add ."
 alias gbd="git branch -d"
+alias gcd="git checkout develop"
 alias gb='git branch'
 alias gcm='git commit -m'
 alias gca="git commit --amend"
