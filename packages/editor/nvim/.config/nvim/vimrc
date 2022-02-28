@@ -4,6 +4,10 @@
 " \ \ \_/ |\ \ \/\ \/\ \/\ \ \ \//\ \__/
 "  \ \___/  \ \_\ \_\ \_\ \_\ \_\\ \____\
 "   \/__/    \/_/\/_/\/_/\/_/\/_/ \/____/
+
+" Leaderキーの設定
+let mapleader = "\<space>"
+
 " プラグイン設定 {{{
 "{{{ vimplug.vim settings
   call plug#begin('~/.config/vim/plugged')
