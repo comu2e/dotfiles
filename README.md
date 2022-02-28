@@ -39,6 +39,15 @@ $ skhd -V
 ```
 
 ### Vim
+
+#### Installation vim-plugin
+```
+$ vim
+:PlugInstall
+cd ~/.config/vim/plugged/coc.vim
+yarn install
+```
+
 Set up <Leader> is <Space>
 ```
 usage 

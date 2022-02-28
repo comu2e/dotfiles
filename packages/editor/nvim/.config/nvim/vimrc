@@ -4,163 +4,73 @@
 " \ \ \_/ |\ \ \/\ \/\ \/\ \ \ \//\ \__/
 "  \ \___/  \ \_\ \_\ \_\ \_\ \_\\ \____\
 "   \/__/    \/_/\/_/\/_/\/_/\/_/ \/____/
-
-"dein Scripts {{{
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin('$HOME/.cache/dein')
-
-" Let dein manage dein
-" Required:
-call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-" Add or remove your plugins here like this:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-" }}}
-" Leaderキーをスペースに設定 {{{
-let mapleader = "\<Space>"
-
-
-if has('nvim')
-  let g:loaded_python_provider   = 0
-  let g:loaded_python3_provider  = 0
-  let g:loaded_shada_plugin      = 1
-endif
-
-" Disable unnecessary default plugins
-let g:loaded_spellfile_plugin   = 1
-let g:loaded_tutor_mode_plugin  = 1
-let g:loaded_gzip               = 1
-let g:loaded_tar                = 1
-let g:loaded_tarPlugin          = 1
-let g:loaded_zip                = 1
-let g:loaded_zipPlugin          = 1
-let g:loaded_rrhelper           = 1
-let g:loaded_2html_plugin       = 1
-let g:loaded_vimball            = 1
-let g:loaded_vimballPlugin      = 1
-let g:loaded_getscript          = 1
-let g:loaded_getscriptPlugin    = 1
-let g:loaded_logipat            = 1
-let g:loaded_matchparen         = 1
-let g:loaded_man                = 1
-let g:loaded_netrw              = 1
-let g:loaded_netrwPlugin        = 1
-let g:loaded_netrwSettings      = 1
-let g:loaded_netrwFileHandlers  = 1
-let g:loaded_logiPat            = 1
-let g:did_install_default_menus = 1
-let g:skip_loading_mswin        = 1
-let g:did_install_syntax_menu   = 1
-let g:plug_shallow = 0
-let g:denops#deno = "/Users/eiji/.asdf/shims/deno"
-let g:quickrun_config = {'_': {}}
-let g:airline_theme='one'
-
-"}}}
 " プラグイン設定 {{{
-"{{{ dein.vim settings
-let s:dein_dir = has('nvim') ? expand('~/.cache/dein/nvim') : expand('~/.cache/dein/vim')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+"{{{ vimplug.vim settings
+  call plug#begin('~/.config/vim/plugged')
 
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . s:dein_repo_dir
-endif
-
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  call dein#add('kana/vim-operator-replace')
-  call dein#add('kana/vim-operator-user')
+  Plug ('kana/vim-operator-replace')
+  Plug ('kana/vim-operator-user')
 
   " syntax
-
+syntax on
   " for development
-  call dein#add('neoclide/coc.nvim', {'rev': 'release'})
-  call dein#add('t9md/vim-choosewin')
-  call dein#add('Shougo/dein.vim')
-  call dein#add('andymass/vim-matchup')
-  call dein#add('cohama/lexima.vim')
-  call dein#add('vim-test/vim-test')
-  call dein#add('junegunn/fzf', {'merged': 0})
-  call dein#add('junegunn/fzf.vim', {'depends': 'fzf'})
-  call dein#add('kshenoy/vim-signature')
-  call dein#add('lambdalisue/fern.vim')
-  call dein#add('lambdalisue/fern-hijack.vim')
-  call dein#add('lambdalisue/gina.vim')
-  call dein#add('lambdalisue/guise.vim')
-  call dein#add('markonm/traces.vim')
-  call dein#add('mattn/emmet-vim', {'merged': 0})
-  call dein#add('mattn/vim-sonictemplate')
-  call dein#add('simeji/winresizer')
-  call dein#add('vim-denops/denops.vim')
-  call dein#add('skanehira/command.vim')
-  call dein#add('skanehira/denops-germanium.vim')
-  call dein#add('skanehira/denops-docker.vim')
-  call dein#add('skanehira/getpr.vim')
-  call dein#add('skanehira/qfopen.vim')
-  call dein#add('thinca/vim-quickrun')
-  call dein#add('skanehira/quickrun-neoterm.vim')
-  call dein#add('tyru/open-browser-github.vim')
-  call dein#add('tyru/open-browser.vim')
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('jparise/vim-graphql')
-  call dein#add('Shougo/ddc.vim')
-  call dein#add('matsui54/denops-popup-preview.vim')
-  call dein#add('tani/ddc-fuzzy')
-  call dein#add('mattn/vim-goimports')
+  Plug 'neoclide/coc.nvim', {'rev': 'release'}
+  Plug 't9md/vim-choosewin'
+  Plug 'Shougo/dein.vim'
+  Plug 'andymass/vim-matchup'
+  Plug 'cohama/lexima.vim'
+  Plug 'vim-test/vim-test'
+  Plug 'junegunn/fzf', {'merged': 0}
+  Plug 'junegunn/fzf.vim', {'depends': 'fzf'}
+  Plug 'kshenoy/vim-signature'
+  Plug 'lambdalisue/fern.vim'
+  Plug 'lambdalisue/fern-hijack.vim'
+  Plug 'lambdalisue/gina.vim'
+  Plug 'lambdalisue/guise.vim'
+  Plug 'markonm/traces.vim'
+  Plug 'mattn/emmet-vim', {'merged': 0}
+  Plug 'mattn/vim-sonictemplate'
+  Plug 'simeji/winresizer'
+  Plug 'vim-denops/denops.vim'
+  Plug 'skanehira/command.vim'
+  Plug 'skanehira/denops-germanium.vim'
+  Plug 'skanehira/denops-docker.vim'
+  Plug 'skanehira/getpr.vim'
+  Plug 'skanehira/qfopen.vim'
+  Plug 'thinca/vim-quickrun'
+  Plug 'skanehira/quickrun-neoterm.vim'
+  Plug 'tyru/open-browser-github.vim'
+  Plug 'tyru/open-browser.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'jparise/vim-graphql'
+  Plug 'Shougo/ddc.vim'
+  Plug 'matsui54/denops-popup-preview.vim'
+  Plug 'tani/ddc-fuzzy'
+  Plug 'mattn/vim-goimports'
 
   " for documentation
-  call dein#add('glidenote/memolist.vim')
-  call dein#add('godlygeek/tabular')
-  call dein#add('gyim/vim-boxdraw', {'merged': 0})
-  call dein#add('mattn/vim-maketable')
-  call dein#add('shinespark/vim-list2tree', {'merged': 0})
-  call dein#add('skanehira/gyazo.vim')
-  call dein#add('skanehira/denops-translate.vim')
-  call dein#add('vim-jp/vimdoc-ja')
-  call dein#add('kat0h/bufpreview.vim', {'merged': 0})
+  Plug 'glidenote/memolist.vim'
+  Plug 'godlygeek/tabular'
+  Plug 'gyim/vim-boxdraw', {'merged': 0}
+  Plug 'mattn/vim-maketable'
+  Plug 'shinespark/vim-list2tree', {'merged': 0}
+  Plug 'skanehira/gyazo.vim'
+  Plug 'skanehira/denops-translate.vim'
+  Plug 'vim-jp/vimdoc-ja'
+  Plug 'kat0h/bufpreview.vim', {'merged': 0}
 
   " for develop vim/neovim plugin
-  call dein#add('LeafCage/vimhelpgenerator')
-  call dein#add('lambdalisue/vital-Whisky', {'merged': 0})
-  call dein#add('tweekmonster/helpful.vim')
-  call dein#add('vim-jp/vital.vim', {'merged': 0})
+  Plug 'LeafCage/vimhelpgenerator'
+  Plug 'lambdalisue/vital-Whisky', {'merged': 0}
+  Plug 'tweekmonster/helpful.vim'
+  Plug 'vim-jp/vital.vim', {'merged': 0}
 
   " other
-  call dein#add('itchyny/lightline.vim')
-call dein#add('arcticicestudio/nord-vim')
+  Plug 'itchyny/lightline.vim'
+  Plug 'arcticicestudio/nord-vim'
 
   " end settings
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
+  call plug#end()
 
 function! DeinClean() abort
   let s:removed_plugins = dein#check_clean()
@@ -171,7 +81,8 @@ function! DeinClean() abort
   endif
 endfunction
 
-command! CleanPlugins call DeinClean()
+" call coc#util#install()
+
 " }}}
 
 " {{{ translate.vim
@@ -360,7 +271,7 @@ command! LspFormat :call CocActionAsync('format')
 command! LspImport :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 command! GoTagAdd :CocCommand go.tags.add.prompt
 command! GoTagRemove :CocCommand go.tags.remove.prompt
-
+set number
 " [
 "   {"text": "(e)dit", "value": "edit"}
 "   {"text": "(n)ew", "value": "new"}
@@ -571,7 +482,6 @@ nmap gup <Plug>(gyazo-upload)
 
 " {{{ colorscheme
 
-call dein#source('nord')
 " カラースキームを使う {{{
 colorscheme nord
 " icebergはターミナルを16色に設定するのを回避
@@ -680,15 +590,15 @@ augroup END
 " }}}
 
 " {{{ シンタックスをクリア
-augroup fileTypeSyntaxClear
-  au!
-  au FileType go syntax clear
-  au FileType vim syntax clear
-  au FileType html syntax clear
-  au FileType javascript syntax clear
-  au FileType typescript syntax clear
-  au FileType vue  syntax clear
-augroup END
+"augroup fileTypeSyntaxClear
+" au!
+"  au FileType go syntax clear
+"  au FileType vim syntax clear
+"  au FileType html syntax clear
+"  au FileType javascript syntax clear
+"  au FileType typescript syntax clear
+"  au FileType vue  syntax clear
+"  augroup END
 " }}}
 
 " grepした結果をquickfixに表示する {{{
@@ -1038,5 +948,4 @@ command! LanguageToolLint call <SID>languagetool_lint()
 " {{{ jumpcursor.vim
 nmap [j <Plug>(jumpcursor-jump)
 " }}}
-
 " vim: foldmethod=marker

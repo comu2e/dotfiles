@@ -67,6 +67,7 @@ else
   log "dotfile is already exist."
 fi 
 
+
 # install software from BrewBundle.
 log "Install APps and CLis"
 brew bundle -v --file=~/dotfiles/Brewfile
@@ -75,6 +76,14 @@ brew bundle -v --file=~/dotfiles/Brewfile
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
+
+if [ !-d ~/.config/vim ]; then
+  mkdir ~/.confgi/vim
+fi
+if [ !-d ~/.config/vim/plugged ]; then
+  mkdir ~/.confgi/vim/plugged
+fi
+
 
 # symlink each config file.
 stow -v -d ~/dotfiles/packages/termial/ -t ~ alacritty fish omf starship tmux
