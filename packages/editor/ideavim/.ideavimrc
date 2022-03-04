@@ -1,0 +1,6 @@
+let mapleader = "\<space>"
+" ファイル保存と終了
+nnoremap <Leader>w :w<CR>
+" 置換
+
+nnoremap <Leader>re :%s/<CR>/<CE>/
