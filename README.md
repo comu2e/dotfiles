@@ -56,13 +56,6 @@ $ #normal mode
 $ <Space> + (f,or ....)
 ```
 
-#### Dein
-
-```
-$ vim
-$ <Esc> :call dein#Update()
-```
-
 #### sonic-template
 ```
 $vim main.go
