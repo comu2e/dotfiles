@@ -86,7 +86,6 @@ function! DeinClean() abort
 endfunction
 
 " call coc#util#install()
-
 " }}}
 
 " {{{ translate.vim
@@ -657,7 +656,10 @@ nnoremap <Leader>w :w<CR>
 nnoremap <C-G><C-G> :Grep <C-R><C-W><CR>
 
 " 置換
-nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
+nnoremap <Leader>re :%s/\<<C-r><C-w>\>/
+
+nnoremap <expr> c* ':%s ;\<' . expand('<cword>') . '\>;'
+vnoremap <expr> c* ':s ;\<' . expand('<cword>') . '\>;'
 
 " ハイライトを削除する
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>

@@ -32,5 +32,6 @@ templatedir = " ~/.config/git-templates/git-secrets"
 	required = true
 [core]
 	excludesfile = /Users/eiji/.gitignore_global
+	editor = vim
 [commit]
 	template = /Users/takahashi.eiji/.stCommitMsg
