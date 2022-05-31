@@ -17,7 +17,9 @@ abbr -a dc docker-compose
 abbr -a dcu docker-compose up 
 abbr -a dcd docker-compose down
 abbr -a dce docker-compose exec
-abbr -a dcep docker-compose exec app php artisan 
+abbr -a dcep docker-compose exec api php artisan 
+abbr -a dcef docker-compose exec frontend yarn dev 
+abbr -a dvrm docker volume rm
 abbr -a dcbash docker-compose exec app /bin/bash 
 #phptest
 abbr -a dtest docker-compose exec app vendor/bin/phpunit
@@ -37,10 +39,14 @@ function awsp
 end
 
 alias vim="nvim"
+alias deploy="git checkout develop && git pull origin develop && git checkout main && git merge develop"
 alias g="git"
 alias ga="git add ."
 alias gbd="git branch -d"
 alias gcd="git checkout develop"
+alias gcm="git checkout main"
+alias gpsd="git push origin develop"
+alias gpsm="git push origin main"
 alias gb='git branch'
 alias gcm='git commit -m'
 alias gca="git commit --amend"

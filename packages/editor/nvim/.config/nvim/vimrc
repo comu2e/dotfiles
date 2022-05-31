@@ -847,6 +847,7 @@ endfunction
 nnoremap gdy :call Get_breakpoint_line()<CR>
 " }}}
 
+"{{{ function
 function! ActiveBrowserTab(line) abort
   let id = a:line[1:match(a:line, "\]", 0, 1)-1]
   call system("open -b $CHROME_BUNDLE_IDENTIFIER")
@@ -858,6 +859,8 @@ nnoremap <silent> gdt :call fzf#run({
       \ "window": 'botright 10new',
       \ "sink": function("ActiveBrowserTab")})<CR>
 
+
+"}}}
 " {{{ markdown
 function! InsertMarkdownLink() abort
   " use register `9`
@@ -961,3 +964,4 @@ command! LanguageToolLint call <SID>languagetool_lint()
 nmap [j <Plug>(jumpcursor-jump)
 " }}}
 " vim: foldmethod=marker
+" }}}
