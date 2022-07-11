@@ -17,6 +17,8 @@ abbr -a dc docker-compose
 abbr -a dcu docker-compose up 
 abbr -a dcd docker-compose down
 abbr -a dce docker-compose exec
+abbr -a stan docker-compose exec app composer larastan
+abbr -a pfix docker-compose exec app composer csfixer-run
 abbr -a dcep docker-compose exec api php artisan 
 abbr -a dcef docker-compose exec frontend yarn dev 
 abbr -a dvrm docker volume rm
@@ -49,7 +51,8 @@ alias gpsd="git push origin develop"
 alias gpsm="git push origin main"
 alias gb='git branch'
 alias gcm='git commit -m'
-alias gca="git commit --amend"
+alias gca='git commit -am'
+alias gcam="git commit --amend"
 alias g="git checkout"
 alias gcb="git checkout -b"
 alias gl="git log --date=iso --decorate"

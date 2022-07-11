@@ -124,6 +124,7 @@ cask "session-manager-plugin"
 cask "keeweb"
 cask "visual-studio-code"
 cask "stoplight-studio"
+cask "finicky"
 
 mas "Xcode", id: 497799835
 mas "Display Menu", id: 549083868

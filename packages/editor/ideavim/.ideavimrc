@@ -3,4 +3,4 @@ let mapleader = "\<space>"
 nnoremap <Leader>w :w<CR>
 " 置換
 
-nnoremap <Leader>re :%s/<CR>/<CE>/
+nnoremap <Leader>re :%s/<CR>/<CR>/
